@@ -36,6 +36,10 @@ html {
   }
 }
 
+.custom-font {
+  font-family: $font-accent;
+}
+
 body {
   font-family: $font-primary, sans-serif;
   font-size: 1.6rem;
@@ -44,6 +48,7 @@ body {
   background: #10101a;
   background-size: 400% 400%;
   // animation: gradient 3s ease-in-out infinite alternate;
+  cursor: url('./../public/svg/cursor__.svg'), auto;
 }
 
 .container {
@@ -61,7 +66,7 @@ body {
   pointer-events: none;
   transition: left top 0.1s ease-in-out;
   z-index: 1233333;
-  background-image: url("../public/svg/cursor.svg");
+  background-image: url('../public/svg/cursor.svg');
   background-size: contain;
   background-repeat: no-repeat;
   animation: cursorAnim 10s infinite linear;
@@ -101,7 +106,7 @@ body {
     position: relative;
 
     &::before {
-      content: "";
+      content: '';
       display: block;
       height: 100%;
       width: 100%;
@@ -116,7 +121,7 @@ body {
       z-index: 1;
     }
     &::after {
-      content: "";
+      content: '';
       display: block;
       height: 100%;
       width: 100%;
@@ -164,13 +169,13 @@ html.has-scroll-dragging {
   min-height: 100vh;
 }
 
-[data-scroll-direction="horizontal"] [data-scroll-container] {
+[data-scroll-direction='horizontal'] [data-scroll-container] {
   height: 100vh;
   display: inline-block;
   white-space: nowrap;
 }
 
-[data-scroll-direction="horizontal"] [data-scroll-section] {
+[data-scroll-direction='horizontal'] [data-scroll-section] {
   display: inline-block;
   vertical-align: top;
   white-space: nowrap;
@@ -195,14 +200,14 @@ html.has-scroll-dragging {
 .has-scroll-dragging .c-scrollbar {
   opacity: 1;
 }
-[data-scroll-direction="horizontal"] .c-scrollbar {
+[data-scroll-direction='horizontal'] .c-scrollbar {
   width: 100%;
   height: 10px;
   top: auto;
   bottom: 0;
   transform: scaleY(1);
 }
-[data-scroll-direction="horizontal"] .c-scrollbar:hover {
+[data-scroll-direction='horizontal'] .c-scrollbar:hover {
   transform: scaleY(1.3);
 }
 
@@ -222,7 +227,7 @@ html.has-scroll-dragging {
   cursor: -webkit-grabbing;
   cursor: grabbing;
 }
-[data-scroll-direction="horizontal"] .c-scrollbar_thumb {
+[data-scroll-direction='horizontal'] .c-scrollbar_thumb {
   right: auto;
   bottom: 0;
 }

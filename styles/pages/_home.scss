@@ -3,7 +3,7 @@
   grid-template-columns: 1fr repeat(12, minmax(min-content, 10rem)) 1fr;
   position: relative;
   &::before {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     top: 0rem;
@@ -12,14 +12,14 @@
     height: 26rem;
     background-repeat: no-repeat;
     background-size: contain;
-    background-image: url("../../public/webp/hand-left.webp");
+    background-image: url('../../public/webp/hand-left.webp');
     @media only screen and (max-width: 45em) {
       width: 20rem;
       height: 20rem;
     }
   }
   &::after {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     bottom: 7rem;
@@ -28,7 +28,7 @@
     height: 45rem;
     background-repeat: no-repeat;
     background-size: contain;
-    background-image: url("../../public/webp/hand-right.webp");
+    background-image: url('../../public/webp/hand-right.webp');
     z-index: -1;
 
     @media only screen and (max-width: 45em) {
@@ -94,7 +94,7 @@
 
       &::after {
         display: block;
-        content: "";
+        content: '';
         position: absolute;
         bottom: -1rem;
         left: 0;
@@ -152,6 +152,9 @@
   margin-top: 20rem;
   padding: 0 6rem;
 
+  @media only screen and (max-width: 1620px) {
+    margin-top: 10rem;
+  }
   @media only screen and (max-width: 57em) {
     grid-column: 1/15;
   }
@@ -206,7 +209,7 @@
     }
 
     &::before {
-      content: "";
+      content: '';
       display: block;
       position: absolute;
       top: -5rem;
@@ -229,7 +232,7 @@
         color: #6b9796;
       }
       &::before {
-        background-image: url("../../public/svg/01.svg");
+        background-image: url('../../public/svg/01.svg');
       }
     }
     &:nth-of-type(2) {
@@ -237,7 +240,7 @@
         color: #e6972f;
       }
       &::before {
-        background-image: url("../../public/svg/02.svg");
+        background-image: url('../../public/svg/02.svg');
       }
     }
     &:nth-of-type(3) {
@@ -245,7 +248,7 @@
         color: #57a3c7;
       }
       &::before {
-        background-image: url("../../public/svg/03.svg");
+        background-image: url('../../public/svg/03.svg');
       }
     }
     &:nth-of-type(4) {
@@ -253,7 +256,7 @@
         color: #c08af1;
       }
       &::before {
-        background-image: url("../../public/svg/04.svg");
+        background-image: url('../../public/svg/04.svg');
       }
     }
 
@@ -364,7 +367,7 @@
 
       &::after {
         display: block;
-        content: "";
+        content: '';
         position: absolute;
         bottom: -1rem;
         left: 0;

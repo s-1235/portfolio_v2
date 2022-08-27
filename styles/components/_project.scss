@@ -1,0 +1,55 @@
+.project {
+  color: red;
+  //   background-color: khaki;
+  grid-column: 1/15;
+  padding: 0 14rem;
+
+  @media only screen and (max-width: 1360px) {
+    padding: 0 3rem;
+  }
+
+  &__desc {
+    margin-bottom: 7.5rem;
+    // padding: 0 14rem;
+    text-align: left !important;
+
+    @media only screen and (max-width: 860px) {
+      padding: 0;
+    }
+  }
+
+  &__title {
+    font-size: 7rem;
+    // text-align: center;
+    padding: 0 6rem;
+    font-family: $font-secondary;
+  }
+  &__grid {
+    width: 100%;
+  }
+  &__row {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    flex-basis: 98%;
+    &:last-child {
+      margin-top: 3rem;
+    }
+  }
+  &__item {
+    flex-basis: 23%;
+    // background: pink;
+    // height: 45rem;
+    margin-right: 0.5rem;
+    min-height: 18rem;
+
+    @media only screen and (max-width: 1080px) {
+      flex-basis: 47%;
+      margin-bottom: 3rem;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

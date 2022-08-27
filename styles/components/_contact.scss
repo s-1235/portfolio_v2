@@ -1,0 +1,87 @@
+.contact {
+  background-color: #10101a;
+  width: 100%;
+  min-height: 35rem;
+  padding: 0 20rem;
+
+  &__titlebox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & span {
+      font-size: 6rem;
+      margin-left: 1rem;
+    }
+  }
+
+  &__title {
+    font-family: $font-secondary;
+  }
+  @media only screen and (max-width: 720px) {
+    padding: 0 2rem;
+  }
+  //   display: flex;
+  grid-column: 1/15;
+  letter-spacing: 1.2px;
+  color: whitesmoke;
+
+  & li {
+    list-style: none;
+  }
+  & input,
+  textarea {
+    background: rgba(20, 20, 20, 0.7);
+    padding: 1.3rem;
+    border: 2px solid whitesmoke;
+    margin-top: 1rem;
+    border-radius: 3px;
+    color: whitesmoke;
+  }
+  & label {
+    color: whitesmoke;
+  }
+
+  &__half {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    @media only screen and (max-width: 720px) {
+      display: block;
+    }
+  }
+  &__list {
+    display: flex;
+    width: 50rem;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+  &__item {
+    flex-basis: 100%;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+
+    &.half {
+      flex-basis: 48%;
+    }
+  }
+
+  &__btn {
+    background-color: whitesmoke;
+    color: black;
+
+    padding: 2rem;
+    border: 2px solid whitesmoke;
+
+    text-transform: uppercase;
+    font-weight: bold;
+
+    &:hover {
+      background-color: rgba(247, 247, 247, 0.041);
+      color: white;
+      cursor: pointer;
+    }
+  }
+}
