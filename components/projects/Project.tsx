@@ -18,6 +18,7 @@ const Project = () => {
         <div className='project__row ' style={{ marginBottom: '1rem' }}>
           <div className='project__item'>
             <ProjectBox
+              img=''
               id={1}
               desc='  A frontend Dashboard created with ReactJs, Express and NodeJs'
             />
@@ -32,6 +33,7 @@ const Project = () => {
           </div>
           <div className='project__item'>
             <ProjectBox
+              img='webp/adeola-2.webp'
               id={3}
               desc='  i have made this blah blah blah..... i have made this blah blah
             blah..... i have made this blah blah blah.....'
@@ -39,6 +41,7 @@ const Project = () => {
           </div>
           <div className='project__item'>
             <ProjectBox
+              img='webp/pixelchef-2.webp'
               id={4}
               desc='  i have made this blah blah blah..... i have made this blah blah
             blah..... i have made this blah blah blah.....'
@@ -48,6 +51,7 @@ const Project = () => {
         <div className='project__row '>
           <div className='project__item'>
             <ProjectBox
+              img='webp/adeola-2.webp'
               id={5}
               desc='  i have made this blah blah blah..... i have made this blah blah
             blah..... i have made this blah blah blah.....'
@@ -55,6 +59,7 @@ const Project = () => {
           </div>
           <div className='project__item'>
             <ProjectBox
+              img='webp/safarika-2.webp'
               id={6}
               desc='  i have made this blah blah blah..... i have made this blah blah
             blah..... i have made this blah blah blah.....'
@@ -62,6 +67,7 @@ const Project = () => {
           </div>
           <div className='project__item'>
             <ProjectBox
+              img='webp/pixelchef-2.webp'
               id={7}
               desc='  i have made this blah blah blah..... i have made this blah blah
             blah..... i have made this blah blah blah.....'
@@ -69,6 +75,7 @@ const Project = () => {
           </div>
           <div className='project__item'>
             <ProjectBox
+              img=''
               id={8}
               desc='  i have made this blah blah blah..... i have made this blah blah
             blah..... i have made this blah blah blah.....'
