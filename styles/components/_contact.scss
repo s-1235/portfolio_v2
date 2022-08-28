@@ -53,7 +53,7 @@
   }
   &__list {
     display: flex;
-    width: 50rem;
+    max-width: 50rem;
     flex-direction: column;
     margin: 0 auto;
   }
