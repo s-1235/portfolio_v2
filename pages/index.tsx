@@ -302,6 +302,7 @@ const index: React.FC<indexProps> = ({}) => {
             </div>
           </div>
         </div>
+        {/* <p className='section-contact__h2 m-heading'> */}
         <p className='about-text m-heading'>
           Hello stranger! 👋, my name is mazen and I am a software engineer,
           passionate <br /> about digital products that help people experience
@@ -315,7 +316,8 @@ const index: React.FC<indexProps> = ({}) => {
             <h1 className='heading-1'>
               <span>Yeah, I work hard </span> <small>💼</small>
             </h1>
-            <p className='paragraph'>
+            {/* <p className='paragraph'> */}
+            <p className='section-contact__h2'>
               Each project is unique. Here are some of my works.
             </p>
 
@@ -523,7 +525,8 @@ const index: React.FC<indexProps> = ({}) => {
               <h1 className='heading-1'>
                 <span>Hear from others</span> <small>✨</small>
               </h1>
-              <p className='paragraph paragraph__sub'>
+              {/* <p className='paragraph paragraph__sub'> */}
+              <p className='section-contact__h2'>
                 I am lucky to be working with awesome peoples from all aroumd
                 the world...
               </p>

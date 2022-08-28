@@ -3,17 +3,21 @@ import ProjectBox from './ProjectBox';
 const Project = () => {
   return (
     <div className='project'>
-      <h2
+      {/* <h2
         className='header__hero--heading-gradient project__title'
         // style={{ margin: '5.5rem 0' }}
-      >
-        Projects
-      </h2>
-      <p className='about-text m-heading project__desc '>
-        {/* <p className='paragraph paragraph-sub '> */}
-        More of my projects, I am blessed to have worked with great clients and
-        help them with my skills I have uploaded these with their consents!
-      </p>
+      > */}
+      <div className='project__content-style'>
+        <h1 className='heading-1'>
+          <span>Projects </span> ⚒️
+        </h1>
+        <p className='about-text m-heading project__desc '>
+          {/* <p className='paragraph paragraph-sub '> */}
+          More of my projects, I am blessed to have worked with great clients
+          and help them with my skills I have uploaded these with their
+          consents!
+        </p>
+      </div>
       <div className='project__grid'>
         <div className='project__row ' style={{ marginBottom: '1rem' }}>
           <div className='project__item'>
