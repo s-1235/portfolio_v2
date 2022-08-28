@@ -193,7 +193,20 @@ const index: React.FC<indexProps> = ({}) => {
           toggleOpen={() => toggleBodyScroll(isToggleOpen)}
         />
         <div className='header-wrapper'>
-          <header className='header'>
+          {/* <header className='header'> */}
+          <header
+            className='header'
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+            }}
+          >
+            <img
+              src='webp/avatar.webp'
+              alt='mazen avatar'
+              className='header__avatar'
+            />
             <div className='header__hero'>
               <div
                 className='header__hero--heading'
@@ -594,7 +607,8 @@ const index: React.FC<indexProps> = ({}) => {
             <h1 className='heading-1'>
               <span>Dont be a stranger!</span> <small>👋</small>
             </h1>
-            <p className='paragraph'>Connect with me online</p>
+            {/* <p className='paragraph'>Connect with me online</p> */}
+            <h2 className='section-contact__h2'>Connect with me online</h2>
             <div className='section-socials--links'>
               <a
                 href='https://github.com/mazenjamshed'

@@ -2,22 +2,22 @@
   display: grid;
   grid-template-columns: 1fr repeat(12, minmax(min-content, 10rem)) 1fr;
   position: relative;
-  &::before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0rem;
-    left: 0rem;
-    width: 26rem;
-    height: 26rem;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-image: url('../../public/webp/hand-left.webp');
-    @media only screen and (max-width: 45em) {
-      width: 20rem;
-      height: 20rem;
-    }
-  }
+  // &::before {
+  //   content: '';
+  //   display: block;
+  //   position: absolute;
+  //   top: 0rem;
+  //   left: 0rem;
+  //   width: 26rem;
+  //   height: 26rem;
+  //   background-repeat: no-repeat;
+  //   background-size: contain;
+  //   background-image: url('../../public/webp/hand-left.webp');
+  //   @media only screen and (max-width: 45em) {
+  //     width: 20rem;
+  //     height: 20rem;
+  //   }
+  // }
   &::after {
     content: '';
     display: block;
@@ -43,12 +43,41 @@
   margin-top: 25rem;
   padding: 0 6rem;
 
+  @media only screen and (max-width: 510px) {
+    flex-direction: column;
+
+    &__avatar {
+      align-self: center !important;
+      margin-bottom: 4rem;
+    }
+
+    &__hero {
+      text-align: center !important;
+    }
+  }
+
+  &__avatar {
+    margin-right: 2rem;
+    width: 30rem;
+
+    @media only screen and (max-width: 940px) {
+      width: 27rem;
+    }
+    @media only screen and (max-width: 700px) {
+      width: 24rem;
+    }
+    @media only screen and (max-width: 540px) {
+      align-self: flex-start;
+    }
+  }
+
   @media only screen and (max-width: 45em) {
     grid-column: 1/15;
     padding: 0 4rem;
   }
 
   &__hero {
+    text-align: end;
     &--heading {
       font-family: $font-secondary;
       font-size: 9rem;
