@@ -1,21 +1,21 @@
-import * as React from 'react';
-import { motion } from 'framer-motion';
-import { MenuToggle } from './MenuToggle';
-import { MobileNavigation } from './MobileNavigation';
-import Link from 'next/link';
+import * as React from "react";
+import { motion } from "framer-motion";
+import { MenuToggle } from "./MenuToggle";
+import { MobileNavigation } from "./MobileNavigation";
+import Link from "next/link";
 
 const variants = {
   open: {
     left: 0,
-    pointerEvent: 'none',
+    pointerEvent: "none",
     transition: {
       duration: 1,
       ease: [0.6, 0.01, -0.05, 0.9],
     },
   },
   closed: {
-    left: '-100vw',
-    pointerEvent: 'none',
+    left: "-100vw",
+    pointerEvent: "none",
     transition: {
       delay: 1,
       duration: 1,
@@ -28,28 +28,30 @@ export const Navigation = ({ isOpen, toggleOpen }: any) => {
   return (
     <motion.div
       initial={false}
-      animate={isOpen ? 'open' : 'closed'}
-      className='navigation-wrapper'
+      animate={isOpen ? "open" : "closed"}
+      className="navigation-wrapper"
     >
       <MobileNavigation variants={variants} isOpen={isOpen} />
       <div
         data-scroll
         data-scroll-sticky
-        data-scroll-target='#menu-target'
-        className='menu-top'
+        data-scroll-target="#menu-target"
+        className="menu-top"
       >
-        <Link href='/'>
-          <a className='brand-logo'>
+        <Link href="/">
+          <a className="brand-logo">
             <img
-              className='brand-logo__icon'
-              src='svg/mazen_logo.svg'
-              alt='mazen jamshed logo icon'
+              className="brand-logo__icon"
+              src="svg/sadam2.svg"
+              alt="Sadam Khan logo icon"
+              width="30px"
             />
-            <span className='brand-logo__text-wrapper'>
+            <span className="brand-logo__text-wrapper">
               <img
-                className='brand-logo__text'
-                src='svg/mazen_2.svg'
-                alt='mazen jamshed logo text'
+                className="brand-logo__text"
+                src="svg/sadam_logo.svg"
+                alt="Sadam Khan logo text"
+                width="40%"
               />
             </span>
           </a>
