@@ -1,4 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
+import type { NextApiRequest, NextApiResponse } from "next";
 
 interface project {
   id: number;
@@ -10,21 +10,21 @@ interface project {
 export const projects: project[] = [
   {
     id: 1,
-    name: 'propal',
-    details: 'I created this for fyp.',
-    img: '',
+    name: "propal",
+    details: "I created this for fyp.",
+    img: "",
   },
   {
     id: 2,
-    name: 'wordpress',
-    details: 'I created this for fyp.',
-    img: '',
+    name: "wordpress",
+    details: "I created this for fyp.",
+    img: "",
   },
   {
     id: 3,
-    name: 'portfolio',
-    details: 'I created this for fyp.',
-    img: '',
+    name: "portfolio",
+    details: "I created this for fyp.",
+    img: "",
   },
 ];
 

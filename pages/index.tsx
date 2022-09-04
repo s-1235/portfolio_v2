@@ -87,7 +87,7 @@ const index: React.FC<indexProps> = ({}) => {
 
     console.clear();
     console.log.apply(console, [
-      "%c Designed and Developed by Mazen Jamshed %c %c🚀 %c\n",
+      "%c Designed and Developed by Sadam Khan %c %c🚀 %c\n",
       "color: #fff; background: #01010a; padding:5px 0;",
       "color: #fff; background: #242424; padding:5px 0 5px 5px;",
       "background: #242424; padding:5px 0",
@@ -203,7 +203,7 @@ const index: React.FC<indexProps> = ({}) => {
           >
             <img
               src="svg/sadamAva.png"
-              alt="mazen avatar"
+              alt="Sadam Khan"
               className="header__avatar"
             />
             <div className="header__hero">
