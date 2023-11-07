@@ -476,7 +476,7 @@ const index: React.FC<indexProps> = ({}) => {
                 <h4 className="heading-4">HTML, SCSS, JAVASCRIPT, GSAP</h4>
               </div>
               <div
-                className=" -card__middle"
+                className="project-card__middle"
                 data-displacement="webp/myDistorsionImage.webp"
               >
                 <img src="webp/meetmine.webp" alt="adeola model" />
@@ -505,14 +505,14 @@ const index: React.FC<indexProps> = ({}) => {
                   <a
                     rel="noopener"
                     target="_blank"
-                    href="https://meetmine.ai"
+                    href="https://dribbble.com/shots/12338926-Adeola-Adeoti-Portfolio"
                   >
-                    <img src="webp/meetmine.webp" alt="dribble icon" />
+                    <img src="svg/dribble.svg" alt="dribble icon" />
                   </a>
                   <a
                     rel="noopener"
                     target="_blank"
-                    href="https://github.com/s-1235"
+                    href="https://github.com/adeolaadeoti/adeolaadeoti-portfolio"
                   >
                     <img src="svg/github.svg" alt="github icon" />
                   </a>
