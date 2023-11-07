@@ -476,11 +476,11 @@ const index: React.FC<indexProps> = ({}) => {
                 <h4 className="heading-4">HTML, SCSS, JAVASCRIPT, GSAP</h4>
               </div>
               <div
-                className="project-card__middle"
+                className=" -card__middle"
                 data-displacement="webp/myDistorsionImage.webp"
               >
-                <img src="webp/adeola-1.webp" alt="adeola model" />
-                <img src="webp/adeola-2.webp" alt="adeola logo" />
+                <img src="webp/meetmine.webp" alt="adeola model" />
+                <img src="webp/meetmine.webp" alt="adeola logo" />
               </div>
               <div className="project-card__right">
                 <h2
@@ -490,29 +490,29 @@ const index: React.FC<indexProps> = ({}) => {
                   data-scroll-class="adeola-anim"
                   className="heading-2"
                 >
-                  AdeolaAdeoti
+                  Meetmine
                   <br /> version 1
                 </h2>
                 <a
                   rel="noopener"
                   target="_blank"
-                  href="https://github.com/s-1235"
+                  href="https://meetmine.ai"
                   className="project-card__link"
                 >
-                  VIEW SOURCE CODE
+                  VISIT WEBSITE
                 </a>
                 <div className="project-card__socials">
                   <a
                     rel="noopener"
                     target="_blank"
-                    href="https://dribbble.com/shots/12338926-Adeola-Adeoti-Portfolio"
+                    href="https://meetmine.ai"
                   >
-                    <img src="svg/dribble.svg" alt="dribble icon" />
+                    <img src="webp/meetmine.webp" alt="dribble icon" />
                   </a>
                   <a
                     rel="noopener"
                     target="_blank"
-                    href="https://github.com/adeolaadeoti/adeolaadeoti-portfolio"
+                    href="https://github.com/s-1235"
                   >
                     <img src="svg/github.svg" alt="github icon" />
                   </a>
