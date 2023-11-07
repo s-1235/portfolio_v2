@@ -178,10 +178,11 @@ const index: React.FC<indexProps> = ({}) => {
               animate={{ x: 0, opacity: 1, transition: { ...transition } }}
               className="preloader__right"
             >
+              <p className="preloader__text">JS Frameworks</p>
               <p className="preloader__text">MERN STACK</p>
               <p className="preloader__text">NEXT JS</p>
-              <p className="preloader__text">Node JS</p>
-              <p className="preloader__text">React JS</p>
+              <p className="preloader__text">Artificial Intelligence</p>
+              <p className="preloader__text">Blockchain</p>
               <p className="preloader__text">Full Stack</p>
             </motion.div>
           </div>
