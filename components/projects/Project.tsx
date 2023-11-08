@@ -24,7 +24,7 @@ const Project = () => {
             <ProjectBox
               img="webp/alexxandria-2.webp"
               id={1}
-              desc=""
+              desc="A Frontend created with NextJs, Typescript and Framer Motion"
             />
           </div>
           <div className="project__item">
@@ -61,7 +61,7 @@ const Project = () => {
             <ProjectBox
               img="webp/safarika-2.webp"
               id={6}
-              desc="A Frontend created with ReactJs, Typescript and Framer Motion"
+              desc="A Dashboard with ReactJs, Typescript and Framer Motion"
             />
           </div>
           <div className="project__item">
