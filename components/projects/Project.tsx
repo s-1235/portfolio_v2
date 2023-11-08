@@ -52,7 +52,7 @@ const Project = () => {
         <div className="project__row ">
           <div className="project__item">
             <ProjectBox
-              img="webp/5.PNG"
+              img="webp/5.png"
               id={5}
               desc="A hotel management system developed using microservices architecture"
             />
