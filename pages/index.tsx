@@ -491,7 +491,6 @@ const index: React.FC<indexProps> = ({}) => {
                   className="heading-2"
                 >
                   Meetmine
-                  <br /> version 1
                 </h2>
                 <a
                   rel="noopener"
@@ -536,7 +535,7 @@ const index: React.FC<indexProps> = ({}) => {
               </h1>
               {/* <p className='paragraph paragraph__sub'> */}
               <p className="section-contact__h2">
-                I am lucky to be working with awesome peoples from all aroumd
+                I am lucky to be working with awesome peoples from all around
                 the world...
               </p>
             </div>

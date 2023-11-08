@@ -24,65 +24,58 @@ const Project = () => {
             <ProjectBox
               img="webp/alexxandria-2.webp"
               id={1}
-              desc="  A frontend Dashboard created with ReactJs, Express and NodeJs"
+              desc=""
             />
           </div>
           <div className="project__item">
             <ProjectBox
-              img="webp/alexxandria-2.webp"
+              img="webp/1.png"
               id={2}
-              desc="  i have made this blah blah blah..... i have made this blah blah
-            blah..... i have made this blah blah blah....."
+              desc="A Real Estate Portal Made using React Js, Node Js, Express Js and Artificial Intelligence"
             />
           </div>
           <div className="project__item">
             <ProjectBox
-              img="webp/adeola-2.webp"
+              img="webp/2.png"
               id={3}
-              desc="  i have made this blah blah blah..... i have made this blah blah
-            blah..... i have made this blah blah blah....."
+              desc="A Modern Day Freelancing Portal which uses AI to Enhance Collaboration"
             />
           </div>
           <div className="project__item">
             <ProjectBox
-              img="webp/pixelchef-2.webp"
+              img="webp/3.png"
               id={4}
-              desc="  i have made this blah blah blah..... i have made this blah blah
-            blah..... i have made this blah blah blah....."
+              desc="A chrome extension for filling out text inputs on runtime using AI"
             />
           </div>
         </div>
         <div className="project__row ">
           <div className="project__item">
             <ProjectBox
-              img="webp/adeola-2.webp"
+              img="webp/5.PNG"
               id={5}
-              desc="  i have made this blah blah blah..... i have made this blah blah
-            blah..... i have made this blah blah blah....."
+              desc="A hotel management system developed using microservices architecture"
             />
           </div>
           <div className="project__item">
             <ProjectBox
               img="webp/safarika-2.webp"
               id={6}
-              desc="  i have made this blah blah blah..... i have made this blah blah
-            blah..... i have made this blah blah blah....."
+              desc="A Frontend created with ReactJs, Typescript and Framer Motion"
             />
           </div>
           <div className="project__item">
             <ProjectBox
               img="webp/pixelchef-2.webp"
               id={7}
-              desc="  i have made this blah blah blah..... i have made this blah blah
-            blah..... i have made this blah blah blah....."
+              desc="A Frontend created with ReactJs, MUI and Framer Motion"
             />
           </div>
           <div className="project__item">
             <ProjectBox
               img=""
               id={8}
-              desc="  i have made this blah blah blah..... i have made this blah blah
-            blah..... i have made this blah blah blah....."
+              desc="A Frontend created with NextJs, Chakra UI and Framer Motion"
             />
           </div>
         </div>
