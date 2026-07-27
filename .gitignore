@@ -30,3 +30,5 @@ yarn-error.log*
 
 # vercel
 .vercelrm 
+# claude local settings
+.claude/settings.local.json
