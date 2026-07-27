@@ -207,6 +207,11 @@ Work top to bottom; each step has its own verification. Mark [x] as steps comple
 
 ## Conventions for future sessions
 
+### Commit style (Sadam's rule, 2026-07-27)
+Short, professional, single-line messages that read as written by Sadam. NO
+Co-Authored-By or any AI attribution — enforced via attribution:"" in
+.claude/settings.local.json. Author: Sadam Khan <s-1235@users.noreply.github.com>.
+
 - Keep this file updated: move items between Done / Next / Backlog as work happens,
   and log non-obvious decisions under Decisions with a one-line rationale.
 - Old site remains untouched on `main` until the rebuild is deployable.
