@@ -68,8 +68,7 @@ restraint), upgraded with far deeper case studies than the reference.
   Read it at session start if it exists; supplements/overrides Toptal content.
 - Project screenshots/graphics: capture from the live project sites.
 - Social links (LinkedIn, X, GitHub, etc.): Sadam will provide — pending.
-- OPEN QUESTION: name on site — old site says "Sadam Khan", Toptal says "Saddam
-  Hussain". Confirm which to brand the portfolio with.
+- Name on site: RESOLVED — "Sadam Khan" (decided 2026-07-27; git identity matches).
 
 ## Progress catalogue
 
@@ -108,7 +107,10 @@ restraint), upgraded with far deeper case studies than the reference.
 Work top to bottom; each step has its own verification. Mark [x] as steps complete.
 
 ### Phase 0 — Unblock (needs Sadam)
-- [ ] 0.1 Name + hero title decision (Sadam Khan vs Saddam Hussain)
+- [x] 0.1 Name decision: **Sadam Khan** (matches GitHub profile). Hero/positioning
+      line: full-stack engineer building AI-powered products (exact wording at
+      design time, sourced from Toptal bio). Toptal profile still says "Saddam
+      Hussain" — fine, keep the badge link as-is.
 - [ ] 0.2 Social links (GitHub, LinkedIn, X)
 - [ ] 0.3 Email provider choice (Resend vs Formspree) + API key + delivery address (only blocks Phase 5)
 - [x] 0.4 Capture remaining project screenshots → content-assets/<project>/ (2026-07-27)
@@ -132,13 +134,16 @@ Work top to bottom; each step has its own verification. Mark [x] as steps comple
       All captures visually verified; no blank frames. Machine DNS is flaky —
       Playwright goto sometimes needs retries (ERR_NAME_NOT_RESOLVED, transient).
 
-### Phase 1 — Scaffold
-- [ ] 1.1 Create `rebuild` branch
-- [ ] 1.2 Scaffold Next.js 15 (App Router, TS, Tailwind 4) — decide in-place vs subdirectory
-      via approach options first
-- [ ] 1.3 Port keepers: content-assets, avatar/logo SVGs, CLAUDE.md stays at root
-- [ ] 1.4 Base config: fonts (variable pairing), metadata, prettier
-      Test: `npm run dev` boots; `npm run build` passes; `tsc --noEmit` clean
+### Phase 1 — Scaffold ✅ (2026-07-27)
+- [x] 1.1 `rebuild` branch created (approach chosen: root swap on branch; old app
+      removed on branch only — main untouched)
+- [x] 1.2 Scaffolded: Next.js 16.2.12, React 19.2.4, TS, Tailwind 4, App Router,
+      no src-dir, alias @/*. Package name: sadam-khan-portfolio
+- [x] 1.3 Keepers: content-assets/ intact; brand SVGs copied to content-assets/brand/
+      AND public/brand/ (sadam2.svg, sadam_logo.svg, sadamAva.png)
+- [x] 1.4 Fonts: Fraunces (--font-display) + Inter (--font-sans) via next/font;
+      metadata set (Sadam Khan — Full-Stack Engineer · AI Systems); prettier added
+      Test PASSED: tsc clean, build green, dev boots HTTP 200
 
 ### Phase 2 — Design system
 - [ ] 2.1 Tokens: light palette + single purple accent, type scale, spacing, radii
