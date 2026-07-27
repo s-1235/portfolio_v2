@@ -145,11 +145,22 @@ Work top to bottom; each step has its own verification. Mark [x] as steps comple
       metadata set (Sadam Khan — Full-Stack Engineer · AI Systems); prettier added
       Test PASSED: tsc clean, build green, dev boots HTTP 200
 
-### Phase 2 — Design system
-- [ ] 2.1 Tokens: light palette + single purple accent, type scale, spacing, radii
-- [ ] 2.2 Motion primitives (Motion 12): fade/slide reveals, page transitions, durations
-- [ ] 2.3 Shared components: header/nav, footer, container, button, link styles
-      Test: Playwright screenshots of a token demo page at 1440/768/390px; visual review
+### Phase 2 — Design system ✅ (2026-07-27)
+- [x] Direction chosen by Sadam from 3 rendered variants: **C — light + graphite
+      blocks** (light editorial base, near-black "Selected work" sections, purple
+      accent #8000ff, Fraunces display + Inter)
+- [x] 2.1 Tokens in globals.css via @theme inline: bg #f5f5f4, surface #fff, ink
+      #18181b, muted #63636a, accent #8000ff, accent-soft, line, block #18181b,
+      block-surface #232327, block-ink, block-muted → Tailwind utilities (bg-block,
+      text-muted, text-accent, font-display, etc.)
+- [x] 2.2 Motion: `motion` pkg installed; components/motion/Reveal.tsx (whileInView
+      fade+rise, respects prefers-reduced-motion). NOTE: full-page screenshots must
+      scroll through the page first or whileInView content captures as invisible.
+- [x] 2.3 components/ui/{Container,Button(primary|secondary|inverse)}, components/
+      layout/{SiteHeader,SiteFooter}; content/site.ts (site meta + socials, socials
+      still TODO pending 0.2). /preview = temporary token demo route, REMOVE in Phase 7.
+      Test PASSED: tsc + build clean; verified at 1440/768/390 (fixed mobile header
+      wrap with whitespace-nowrap). Stale .next types after route deletion → rm -rf .next.
 
 ### Phase 3 — Content layer
 - [ ] 3.1 Typed `content/projects/*` for the 5 Toptal projects (+ NDA flag per project)
