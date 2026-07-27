@@ -207,6 +207,11 @@ Work top to bottom; each step has its own verification. Mark [x] as steps comple
 
 ## Conventions for future sessions
 
+### Git history (rewritten 2026-07-27)
+Entire pre-rebuild history squashed into root commit "Legacy portfolio site";
+munu251/adeola/Mazen identities removed. ALL commits are authored by Sadam Khan
+<s-1235@users.noreply.github.com> — keep it that way. Do not reintroduce old refs.
+
 ### Commit style (Sadam's rule, 2026-07-27)
 Short, professional, single-line messages that read as written by Sadam. NO
 Co-Authored-By or any AI attribution — enforced via attribution:"" in
