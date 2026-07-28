@@ -24,6 +24,14 @@ export type Project = {
   assetsDir: string;
   /** Order on the home page; omit to exclude from Selected Work */
   featured?: number;
+  /** Served from /public. width/height are intrinsic pixels. */
+  images: {
+    src: string;
+    alt: string;
+    caption?: string;
+    width: number;
+    height: number;
+  }[];
 };
 
 export const projects: Project[] = [
@@ -62,6 +70,29 @@ export const projects: Project[] = [
     links: [{ label: "Client site", href: "https://www.podding.co/" }],
     nda: true,
     assetsDir: "content-assets/podding",
+    images: [
+      {
+        src: "/projects/podding/marketing-hero.png",
+        alt: "Podding marketing site hero",
+        caption: "Client marketing site — podding.co",
+        width: 2880,
+        height: 1800,
+      },
+      {
+        src: "/projects/podding/pod-system.png",
+        alt: "The Pod System section of the Podding site",
+        caption: "The Pod System — public marketing material",
+        width: 2880,
+        height: 1800,
+      },
+      {
+        src: "/projects/podding/app-login.png",
+        alt: "Podding platform login screen",
+        caption: "Platform login — product interface under NDA",
+        width: 1440,
+        height: 900,
+      },
+    ],
     featured: 1,
   },
   {
@@ -101,6 +132,15 @@ export const projects: Project[] = [
       },
     ],
     assetsDir: "content-assets/kayana",
+    images: [
+      {
+        src: "/projects/kayana/marketplace-hero.png",
+        alt: "Kayana VA marketplace homepage, 2024",
+        caption: "Marketplace-era homepage (via Internet Archive, 2024)",
+        width: 2880,
+        height: 1800,
+      },
+    ],
     featured: 2,
   },
   {
@@ -136,6 +176,7 @@ export const projects: Project[] = [
     links: [],
     visualsPending: true,
     assetsDir: "",
+    images: [],
     featured: 3,
   },
   {
@@ -176,6 +217,22 @@ export const projects: Project[] = [
       },
     ],
     assetsDir: "content-assets/sitescripter",
+    images: [
+      {
+        src: "/projects/sitescripter/site-hero.png",
+        alt: "SiteScripter AI website hero",
+        caption: "Product site — sitescripter.co",
+        width: 2880,
+        height: 1800,
+      },
+      {
+        src: "/projects/sitescripter/webstore.png",
+        alt: "SiteScripter AI Chrome Web Store listing",
+        caption: "Chrome Web Store listing",
+        width: 2880,
+        height: 5894,
+      },
+    ],
     featured: 4,
   },
   {
@@ -201,6 +258,22 @@ export const projects: Project[] = [
       { label: "Website", href: "https://joinmya.com/pricing-mya-team/" },
     ],
     assetsDir: "content-assets/mya",
+    images: [
+      {
+        src: "/projects/mya/home-hero.png",
+        alt: "Mya marketing site homepage",
+        caption: "joinmya.com",
+        width: 2880,
+        height: 1800,
+      },
+      {
+        src: "/projects/mya/features-hero.png",
+        alt: "Mya features page",
+        caption: "Feature overview",
+        width: 2880,
+        height: 1800,
+      },
+    ],
   },
 ];
 

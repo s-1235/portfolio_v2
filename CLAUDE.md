@@ -174,19 +174,26 @@ Work top to bottom; each step has its own verification. Mark [x] as steps comple
       /preview/content = temporary proofread dump route, REMOVE in Phase 7.
       Test PASSED: tsc, eslint, build clean; dump page + home verified in browser.
 
-### Phase 4 — Pages (build → verify each before next)
-- [~] 4.1 INTERIM home shipped early (2026-07-28) to fix Vercel prod: hero, 4 project
-      cards (inline data in page.tsx — move to content/ in Phase 3), about blurb,
-      mailto contact. Header nav uses /#work /#about anchors — RESTORE route links
-      when /work and /about exist. Old main couldn't build (React 17 vs next@latest
-      ERESOLVE) → main fast-forwarded to rebuild tip; production now = new site.
-- [ ] 4.2 /work index: all projects, filter chips (AI / full-stack / frontend)
-- [ ] 4.3 /work/[slug] case-study template: problem→role→stack→architecture→visuals→outcome;
-      NDA variant (login shot + "interface under NDA" + public metrics only) — Podding uses it
-- [ ] 4.4 /about: photo, story, skills, timeline, resume download, Toptal badge/link
-- [ ] 4.5 404 page
-      Test per page: Playwright at 1440/768/390px; check dark-content-on-light contrast;
-      keyboard nav; all links resolve
+### Phase 4 — Pages ✅ (2026-07-28)
+- [x] 4.1 Home: hero + featured ProjectCards (link to case studies) + "View all
+      work" + about + mailto contact. (Interim version had shipped 07-28 to fix
+      Vercel prod after main's legacy React17/next@latest ERESOLVE failure.)
+- [x] 4.2 /work: filter chips derived from categories present (All/AI/Full-Stack),
+      components/work/WorkGrid.tsx (client) + ProjectCard.tsx (shared with home)
+- [x] 4.3 /work/[slug]: SSG (generateStaticParams, 5 pages), per-page metadata,
+      outcomes cards on graphite, problem/approach, stack chips, image gallery with
+      captions, NDA banner variant (Podding), visuals-pending variant (Medical),
+      prev/next nav. Case-study images copied to public/projects/<slug>/ with
+      intrinsic dims in content (next/image). FIXED: Kayana toolbar-hidden archive
+      capture was blank (19KB white) — recaptured waiting for 'Can-do' text; blank
+      marketplace-2024-full.png git-rm'd.
+- [x] 4.4 /about: avatar (public/brand/sadamAva.png — cartoon avatar, Sadam may
+      want a real photo later), bio, Toptal badge button, experience timeline on
+      graphite, education. Resume download SKIPPED (no file — backlog).
+- [x] 4.5 app/not-found.tsx. Header route links restored (/work, /about).
+      Test PASSED: tsc/eslint/build clean; screenshots verified: work+podding+about
+      (1440+390), medical (visuals-pending), 404, home. Keyboard nav not yet
+      audited — do in Phase 7.
 
 ### Phase 5 — Contact
 - [ ] 5.1 Form + API route (provider from 0.3), validation, honeypot

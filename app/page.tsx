@@ -3,8 +3,10 @@ import SiteFooter from "@/components/layout/SiteFooter";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import Reveal from "@/components/motion/Reveal";
+import Link from "next/link";
 import { featuredProjects } from "@/content/projects";
 import { site } from "@/content/site";
+import ProjectCard from "@/components/work/ProjectCard";
 
 export default function Home() {
   return (
@@ -45,21 +47,18 @@ export default function Home() {
             <div className="grid gap-6 sm:grid-cols-2">
               {featuredProjects.map((p, i) => (
                 <Reveal key={p.slug} delay={i * 0.05}>
-                  <article className="flex h-full flex-col rounded-2xl bg-block-surface p-8">
-                    <p className="mb-3 text-xs tracking-widest uppercase text-accent">
-                      {p.tags}
-                    </p>
-                    <h3 className="font-display text-2xl">{p.name}</h3>
-                    <p className="mt-3 flex-1 text-sm leading-relaxed text-block-muted">
-                      {p.summary}
-                    </p>
-                    <p className="mt-6 text-xs text-block-muted">
-                      {p.stack.slice(0, 5).join(" · ")}
-                    </p>
-                  </article>
+                  <ProjectCard project={p} />
                 </Reveal>
               ))}
             </div>
+            <Reveal className="mt-10">
+              <Link
+                href="/work"
+                className="text-sm font-medium text-block-ink transition hover:text-accent"
+              >
+                View all work →
+              </Link>
+            </Reveal>
           </Container>
         </section>
 
