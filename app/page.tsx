@@ -3,37 +3,8 @@ import SiteFooter from "@/components/layout/SiteFooter";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import Reveal from "@/components/motion/Reveal";
-
-const projects = [
-  {
-    name: "Podding",
-    tags: "AI · SaaS",
-    description:
-      "AI-driven podcast guest booking platform automating end-to-end workflows with semantic matching. Cut workflow time by 85–88% with a 95% podcast acceptance rate.",
-    stack: "Next.js · Django · LangGraph · RAG · PostgreSQL",
-  },
-  {
-    name: "Kayana",
-    tags: "AI · Marketplace",
-    description:
-      "AI-driven hiring marketplace where recruitment runs with minimal manual involvement. Multi-agent automation reduced hiring time by 90%.",
-    stack: "Next.js · Django · LangGraph · Pinecone · Stripe",
-  },
-  {
-    name: "Medical Imaging AI",
-    tags: "AI · Healthcare",
-    description:
-      "Diagnostic platform on fine-tuned medical models — 87% accuracy on X-ray fracture detection, trained on a 30K+ image dataset. HIPAA & FHIR compliant.",
-    stack: "FastAPI · PyTorch · MedGemma · React Native",
-  },
-  {
-    name: "SiteScripter AI",
-    tags: "AI · Chrome Extension",
-    description:
-      "Commercial AI browser extension for web productivity — content capture, FAISS-backed RAG, summarization. Built and shipped solo, founder to launch.",
-    stack: "Next.js · Django · FAISS · Chrome APIs",
-  },
-];
+import { featuredProjects } from "@/content/projects";
+import { site } from "@/content/site";
 
 export default function Home() {
   return (
@@ -43,15 +14,13 @@ export default function Home() {
         <Container className="pt-20 pb-24">
           <Reveal>
             <p className="mb-6 text-sm font-medium tracking-widest uppercase text-accent">
-              Full-Stack Engineer · AI Systems
+              {site.positioning}
             </p>
             <h1 className="font-display max-w-3xl text-5xl leading-[1.05] tracking-tight sm:text-6xl">
-              Building AI products that ship, scale, and stick.
+              {site.heroHeading}
             </h1>
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted">
-              I&apos;m Sadam Khan — a full-stack engineer specializing in SaaS
-              products and LLM-powered applications, from architecture to the
-              last interaction detail.
+              {site.heroSub}
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <Button href="#work">View my work</Button>
@@ -74,17 +43,19 @@ export default function Home() {
               </p>
             </Reveal>
             <div className="grid gap-6 sm:grid-cols-2">
-              {projects.map((p, i) => (
-                <Reveal key={p.name} delay={i * 0.05}>
+              {featuredProjects.map((p, i) => (
+                <Reveal key={p.slug} delay={i * 0.05}>
                   <article className="flex h-full flex-col rounded-2xl bg-block-surface p-8">
                     <p className="mb-3 text-xs tracking-widest uppercase text-accent">
                       {p.tags}
                     </p>
                     <h3 className="font-display text-2xl">{p.name}</h3>
                     <p className="mt-3 flex-1 text-sm leading-relaxed text-block-muted">
-                      {p.description}
+                      {p.summary}
                     </p>
-                    <p className="mt-6 text-xs text-block-muted">{p.stack}</p>
+                    <p className="mt-6 text-xs text-block-muted">
+                      {p.stack.slice(0, 5).join(" · ")}
+                    </p>
                   </article>
                 </Reveal>
               ))}
@@ -96,14 +67,11 @@ export default function Home() {
           <Container>
             <Reveal>
               <h2 className="font-display mb-6 text-3xl sm:text-4xl">About</h2>
-              <p className="max-w-2xl text-lg leading-relaxed text-muted">
-                I diagnose and resolve performance, architectural, and
-                behavioral issues in production systems, and currently focus on
-                LLM evaluation and benchmark design. Over the last six years
-                I&apos;ve shipped products across podcasting, recruitment,
-                healthcare, and developer tooling — as a founder, senior
-                engineer, and consultant.
-              </p>
+              <div className="max-w-2xl space-y-4 text-lg leading-relaxed text-muted">
+                {site.bio.map((paragraph) => (
+                  <p key={paragraph.slice(0, 24)}>{paragraph}</p>
+                ))}
+              </div>
             </Reveal>
           </Container>
         </section>
@@ -118,7 +86,7 @@ export default function Home() {
                 Have a product to ship or a system to scale? I&apos;m open to
                 select engagements.
               </p>
-              <Button href="mailto:sadamkhan505880@gmail.com">Email me</Button>
+              <Button href={`mailto:${site.email}`}>Email me</Button>
             </Reveal>
           </Container>
         </section>

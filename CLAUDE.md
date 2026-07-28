@@ -162,10 +162,17 @@ Work top to bottom; each step has its own verification. Mark [x] as steps comple
       Test PASSED: tsc + build clean; verified at 1440/768/390 (fixed mobile header
       wrap with whitespace-nowrap). Stale .next types after route deletion → rm -rf .next.
 
-### Phase 3 — Content layer
-- [ ] 3.1 Typed `content/projects/*` for the 5 Toptal projects (+ NDA flag per project)
-- [ ] 3.2 About/bio + experience timeline data from Toptal
-      Test: `tsc --noEmit`; render raw content dump page; proofread copy
+### Phase 3 — Content layer ✅ (2026-07-28)
+- [x] 3.1 content/projects.ts — typed Project (slug, tagline, tags, category[] for
+      /work filters, period, role, summary/problem/approach/outcomes, stack, links,
+      nda, visualsPending, assetsDir, featured order). 5 projects: podding (NDA,
+      featured 1), kayana (2), medical-imaging-ai (visualsPending, 3), sitescripter
+      (4), mya (not featured). featuredProjects export drives home page.
+- [x] 3.2 content/experience.ts (7 roles + education) + site.ts extended (bio,
+      heroHeading/Sub, email sadamkhan505880@gmail.com, location, toptalBadge).
+      Home page now consumes content layer (no inline data).
+      /preview/content = temporary proofread dump route, REMOVE in Phase 7.
+      Test PASSED: tsc, eslint, build clean; dump page + home verified in browser.
 
 ### Phase 4 — Pages (build → verify each before next)
 - [~] 4.1 INTERIM home shipped early (2026-07-28) to fix Vercel prod: hero, 4 project
