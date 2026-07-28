@@ -209,13 +209,23 @@ Work top to bottom; each step has its own verification. Mark [x] as steps comple
       PENDING (Sadam): create Resend account, add RESEND_API_KEY (+ optional
       CONTACT_TO_EMAIL) in Vercel env → then run real end-to-end delivery test.
 
-### Phase 6 — Polish & SEO
-- [ ] 6.1 Motion pass: scroll reveals, page transitions, prefers-reduced-motion support
-- [ ] 6.2 SEO: metadata, OG image, favicon, sitemap.xml, robots.txt
-- [ ] 6.3 Image optimization: next/image everywhere, compress content-assets exports
-- [ ] 6.4 Analytics (Vercel Analytics or GA4)
-      Test: Lighthouse ≥90 all four categories (mobile+desktop); OG preview correct;
-      reduced-motion actually disables animations
+### Phase 6 — Polish & SEO ✅ (2026-07-28)
+- [x] 6.1 Motion: Reveal (existing) + app/template.tsx route-transition fade
+      (respects prefers-reduced-motion via useReducedMotion)
+- [x] 6.2 SEO: metadataBase from VERCEL_PROJECT_PRODUCTION_URL (localhost fallback),
+      title template "%s — Sadam Khan" (per-page titles trimmed to bare names),
+      OG+Twitter meta, public/og.png (1200x630, generated from branded HTML via
+      Playwright — regen template in scratchpad og.html), app/icon.svg (brand mark
+      recolored #f0f0f0→#18181b for light tabs; default favicon.ico removed),
+      app/sitemap.ts (all routes), app/robots.ts (disallow /preview, /api)
+- [x] 6.3 Images: public/projects/* downscaled to ≤1920w via sharp (9.9MB→2MB);
+      intrinsic dims updated in content/projects.ts. content-assets/ keeps originals.
+- [x] 6.4 @vercel/analytics installed, <Analytics/> in layout. NOTE: needs Analytics
+      enabled in Vercel dashboard (Sadam) to record data.
+      Test PASSED: Lighthouse home — desktop 100/100/96/100, mobile 94/100/96/100
+      (perf/a11y/bp/seo). BP=96 due to local-only 404 of /_vercel/insights/script.js
+      (exists only on Vercel infra). Sitemap+robots verified on prod server.
+      OG preview + reduced-motion spot-check: pending in Phase 7 sweep.
 
 ### Phase 7 — Full QA sweep
 - [ ] 7.1 Playwright full-page screenshots of every route at 3 viewports; review all

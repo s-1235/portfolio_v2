@@ -7,7 +7,7 @@ import WorkGrid from "@/components/work/WorkGrid";
 import { projects } from "@/content/projects";
 
 export const metadata: Metadata = {
-  title: "Work — Sadam Khan",
+  title: "Work",
   description:
     "Selected projects: AI products, SaaS platforms, and full-stack systems built and scaled by Sadam Khan.",
 };

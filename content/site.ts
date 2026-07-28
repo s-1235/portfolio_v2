@@ -1,3 +1,8 @@
+/** Canonical production URL. Vercel injects VERCEL_PROJECT_PRODUCTION_URL at build. */
+export const siteUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
+  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  : "http://localhost:3000";
+
 export const site = {
   name: "Sadam Khan",
   title: "Sadam Khan — Full-Stack Engineer · AI Systems",

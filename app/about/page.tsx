@@ -9,7 +9,7 @@ import { site } from "@/content/site";
 import { experience, education } from "@/content/experience";
 
 export const metadata: Metadata = {
-  title: "About — Sadam Khan",
+  title: "About",
   description: site.description,
 };
 

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import { site, siteUrl } from "@/content/site";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -14,9 +16,26 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Sadam Khan — Full-Stack Engineer · AI Systems",
-  description:
-    "Full-stack engineer building and scaling SaaS products and LLM-powered applications.",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: site.title,
+    template: "%s — Sadam Khan",
+  },
+  description: site.description,
+  openGraph: {
+    title: site.title,
+    description: site.description,
+    url: siteUrl,
+    siteName: site.name,
+    type: "website",
+    images: [{ url: "/og.png", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: site.title,
+    description: site.description,
+    images: ["/og.png"],
+  },
 };
 
 export default function RootLayout({
@@ -29,7 +48,10 @@ export default function RootLayout({
       lang="en"
       className={`${fraunces.variable} ${inter.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
