@@ -9,10 +9,11 @@ export default function SiteHeader() {
           Sadam Khan
         </Link>
         <nav className="flex items-center gap-4 text-sm sm:gap-8">
-          <Link href="/work" className="text-muted transition hover:text-ink">
+          {/* Interim: anchors until /work and /about routes land in Phase 4 */}
+          <Link href="/#work" className="text-muted transition hover:text-ink">
             Work
           </Link>
-          <Link href="/about" className="text-muted transition hover:text-ink">
+          <Link href="/#about" className="text-muted transition hover:text-ink">
             About
           </Link>
           <Link

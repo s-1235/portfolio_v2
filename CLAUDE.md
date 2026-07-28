@@ -168,7 +168,11 @@ Work top to bottom; each step has its own verification. Mark [x] as steps comple
       Test: `tsc --noEmit`; render raw content dump page; proofread copy
 
 ### Phase 4 — Pages (build → verify each before next)
-- [ ] 4.1 Home: hero (name, positioning, CTA), selected work (3-4), brief about, contact strip
+- [~] 4.1 INTERIM home shipped early (2026-07-28) to fix Vercel prod: hero, 4 project
+      cards (inline data in page.tsx — move to content/ in Phase 3), about blurb,
+      mailto contact. Header nav uses /#work /#about anchors — RESTORE route links
+      when /work and /about exist. Old main couldn't build (React 17 vs next@latest
+      ERESOLVE) → main fast-forwarded to rebuild tip; production now = new site.
 - [ ] 4.2 /work index: all projects, filter chips (AI / full-stack / frontend)
 - [ ] 4.3 /work/[slug] case-study template: problem→role→stack→architecture→visuals→outcome;
       NDA variant (login shot + "interface under NDA" + public metrics only) — Podding uses it
