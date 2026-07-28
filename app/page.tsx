@@ -7,6 +7,7 @@ import Link from "next/link";
 import { featuredProjects } from "@/content/projects";
 import { site } from "@/content/site";
 import ProjectCard from "@/components/work/ProjectCard";
+import ContactForm from "@/components/contact/ContactForm";
 
 export default function Home() {
   return (
@@ -83,9 +84,16 @@ export default function Home() {
               </h2>
               <p className="mb-8 max-w-xl text-lg leading-relaxed text-muted">
                 Have a product to ship or a system to scale? I&apos;m open to
-                select engagements.
+                select engagements. Use the form, or{" "}
+                <a
+                  href={`mailto:${site.email}`}
+                  className="font-medium text-accent hover:underline"
+                >
+                  email me directly
+                </a>
+                .
               </p>
-              <Button href={`mailto:${site.email}`}>Email me</Button>
+              <ContactForm />
             </Reveal>
           </Container>
         </section>

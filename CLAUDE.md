@@ -195,10 +195,19 @@ Work top to bottom; each step has its own verification. Mark [x] as steps comple
       (1440+390), medical (visuals-pending), 404, home. Keyboard nav not yet
       audited — do in Phase 7.
 
-### Phase 5 — Contact
-- [ ] 5.1 Form + API route (provider from 0.3), validation, honeypot
-      Test: send real submission end-to-end, confirm delivery to Sadam's inbox; test
-      validation errors and rate limiting
+### Phase 5 — Contact ~✅ code complete (2026-07-28), delivery test BLOCKED on key
+- [x] 5.1 Provider: Resend via plain fetch (no SDK dep). app/api/contact/route.ts:
+      validation (name ≤200, email regex ≤320, message 10–5000), honeypot field
+      "company" (silently accepted), per-instance rate limit 5/min/IP. Env:
+      RESEND_API_KEY (required), CONTACT_TO_EMAIL (optional, defaults site.email).
+      Sender: onboarding@resend.dev sandbox — NOTE: sandbox only delivers to the
+      Resend account owner's own inbox; verify a custom domain later for cleaner
+      From. components/contact/ContactForm.tsx (client, idle/sending/sent/error
+      states). Wired into home #contact with mailto fallback link.
+      Tested: 400s per field, honeypot 200, rate-limit 429 after 5/min, 503 +
+      friendly error when key missing (UI shows it, mailto fallback visible).
+      PENDING (Sadam): create Resend account, add RESEND_API_KEY (+ optional
+      CONTACT_TO_EMAIL) in Vercel env → then run real end-to-end delivery test.
 
 ### Phase 6 — Polish & SEO
 - [ ] 6.1 Motion pass: scroll reveals, page transitions, prefers-reduced-motion support
