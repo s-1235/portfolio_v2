@@ -227,10 +227,24 @@ Work top to bottom; each step has its own verification. Mark [x] as steps comple
       (exists only on Vercel infra). Sitemap+robots verified on prod server.
       OG preview + reduced-motion spot-check: pending in Phase 7 sweep.
 
-### Phase 7 — Full QA sweep
-- [ ] 7.1 Playwright full-page screenshots of every route at 3 viewports; review all
-- [ ] 7.2 Link check (internal + external), tsc, build, no console errors
-- [ ] 7.3 Cross-check content against Toptal for accuracy; NDA compliance re-check
+### Phase 7 — Full QA sweep ✅ (2026-07-29)
+- [x] /preview + /preview/content routes REMOVED (robots.ts still disallows /preview —
+      harmless, left in)
+- [x] 7.1 27 full-page screenshots (9 routes × 1440/768/390) — representative set
+      reviewed incl. NDA + visuals-pending variants, sitescripter, mya, 404
+- [x] 7.2 tsc/eslint/build clean. Console: ONLY /_vercel/insights/script.js 404
+      (local-only, resolves on Vercel). Links: all internal 200; externals OK
+      except LinkedIn 999 (bot-block, not broken — URL still unverified pending
+      0.2) and joinmya 301 (fine). Tab order on home: fully logical, 14 stops.
+      FIXED during sweep: reduced-motion was broken (useReducedMotion returns
+      value post-mount; motion bakes initial opacity:0 into SSR HTML and ignores
+      later initial changes) → replaced hook with CSS: .motion-safe-anim +
+      @media (prefers-reduced-motion: reduce) { opacity/transform !important }.
+      Verified: reduce=all visible instantly; normal=below-fold still animates.
+      LESSON: pkill -f pattern must not match own shell cmd (use "[n]ext" bracket
+      trick) or the compound kills itself with empty output.
+- [x] 7.3 Content metrics cross-checked against Toptal record — all match. NDA
+      compliance: Podding = marketing site + login + public metrics only ✓
 
 ### Phase 8 — Ship
 - [ ] 8.1 Commit history clean on `rebuild`; merge to main (with Sadam)

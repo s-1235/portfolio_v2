@@ -36,3 +36,12 @@ body {
   color: var(--ink);
   font-family: var(--font-inter), sans-serif;
 }
+
+/* Hard override for motion elements: inline styles lose to !important,
+   so reveals/transitions are instantly visible regardless of JS timing. */
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe-anim {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
