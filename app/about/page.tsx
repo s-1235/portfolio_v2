@@ -54,21 +54,21 @@ export default function AboutPage() {
           </div>
         </Container>
 
-        <section className="bg-block py-16 text-block-ink">
+        <section className="border-t border-line py-16">
           <Container>
             <Reveal>
               <h2 className="font-display mb-10 text-3xl">Experience</h2>
             </Reveal>
-            <ol className="space-y-10 border-l border-block-surface pl-8">
+            <ol className="space-y-10 border-l border-line pl-8">
               {experience.map((e, i) => (
                 <Reveal key={e.company} delay={i * 0.03}>
                   <li className="relative">
                     <span className="absolute -left-[37px] top-2 h-2 w-2 rounded-full bg-accent" />
-                    <p className="text-sm text-block-muted">{e.period}</p>
+                    <p className="text-sm text-muted">{e.period}</p>
                     <h3 className="font-display mt-1 text-xl">
-                      {e.role} — {e.company}
+                      {e.role}, {e.company}
                     </h3>
-                    <ul className="mt-3 list-disc space-y-1 pl-5 text-sm leading-relaxed text-block-muted">
+                    <ul className="mt-3 list-disc space-y-1 pl-5 text-sm leading-relaxed text-muted">
                       {e.points.map((pt) => (
                         <li key={pt}>{pt}</li>
                       ))}
@@ -78,8 +78,8 @@ export default function AboutPage() {
               ))}
             </ol>
             <Reveal className="mt-12">
-              <p className="text-sm text-block-muted">
-                {education.degree} — {education.school} ({education.period})
+              <p className="text-sm text-muted">
+                {education.degree}, {education.school} ({education.period})
               </p>
             </Reveal>
           </Container>

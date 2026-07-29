@@ -31,9 +31,14 @@ restraint), upgraded with far deeper case studies than the reference.
 ## Decisions (agreed with Sadam)
 
 - **Rebuild, not renovate** — fresh Next.js app in this repo (work on a branch), port assets worth keeping.
-- **Visual direction:** light/editorial base following Jenny's principles (whitespace,
-  minimal palette, few typefaces), with selected signature touches from the old site
-  (single accent color, purposeful motion). NOT a 50/50 merge of the two designs.
+- **Visual direction (REVISED 2026-07-29, Sadam's call):** FULL light, image-led,
+  Jenny-converged. Graphite blocks dropped entirely (variant C's dark sections felt
+  too far from the reference in production). Work cards = large screenshot tiles
+  with name + tagline beneath; purple only in small details (eyebrows, links,
+  buttons, timeline dots). Projects without visuals get accent-soft typographic
+  placeholder tiles.
+- **Copy style rule (Sadam, 2026-07-29): NO em-dashes (—) anywhere in site copy.**
+  Use commas/colons/periods instead. Numeric ranges keep en-dashes (85–88%).
 - **Target stack:** Next.js 15+ App Router, React 19, TS 5, Tailwind CSS 4, Motion
   (framer-motion 12), Lenis or native scroll, MDX/typed content dir for case studies,
   next/image, static generation.

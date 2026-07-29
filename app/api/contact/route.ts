@@ -68,7 +68,7 @@ export async function POST(req: Request) {
   const to = process.env.CONTACT_TO_EMAIL ?? site.email;
   if (!apiKey) {
     return NextResponse.json(
-      { error: "Contact form isn't configured yet — please email me directly." },
+      { error: "Contact form isn't configured yet. Please email me directly." },
       { status: 503 },
     );
   }
@@ -91,7 +91,7 @@ export async function POST(req: Request) {
   if (!res.ok) {
     console.error("Resend error", res.status, await res.text());
     return NextResponse.json(
-      { error: "Sending failed — please email me directly." },
+      { error: "Sending failed. Please email me directly." },
       { status: 502 },
     );
   }

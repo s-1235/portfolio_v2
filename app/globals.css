@@ -9,10 +9,6 @@
   --accent: #8000ff;
   --accent-soft: #eee6fa;
   --line: #dcdcdf;
-  --block: #18181b;
-  --block-surface: #232327;
-  --block-ink: #fafafa;
-  --block-muted: #a1a1aa;
 }
 
 @theme inline {
@@ -23,10 +19,6 @@
   --color-accent: var(--accent);
   --color-accent-soft: var(--accent-soft);
   --color-line: var(--line);
-  --color-block: var(--block);
-  --color-block-surface: var(--block-surface);
-  --color-block-ink: var(--block-ink);
-  --color-block-muted: var(--block-muted);
   --font-sans: var(--font-inter);
   --font-display: var(--font-fraunces);
 }

@@ -22,7 +22,7 @@ export default function WorkGrid({ projects }: { projects: Project[] }) {
 
   return (
     <>
-      <div className="mb-10 flex flex-wrap gap-3">
+      <div className="mb-12 flex flex-wrap gap-3">
         {(["all", ...present] as const).map((c) => (
           <button
             key={c}
@@ -30,15 +30,15 @@ export default function WorkGrid({ projects }: { projects: Project[] }) {
             onClick={() => setFilter(c)}
             className={`rounded-full px-4 py-2 text-sm transition ${
               filter === c
-                ? "bg-accent text-white"
-                : "bg-block-surface text-block-muted hover:text-block-ink"
+                ? "bg-ink text-bg"
+                : "border border-line text-muted hover:text-ink"
             }`}
           >
             {c === "all" ? "All" : labels[c]}
           </button>
         ))}
       </div>
-      <div className="grid gap-6 sm:grid-cols-2">
+      <div className="grid gap-x-8 gap-y-14 sm:grid-cols-2">
         {visible.map((p) => (
           <ProjectCard key={p.slug} project={p} />
         ))}

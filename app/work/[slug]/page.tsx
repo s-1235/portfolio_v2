@@ -83,7 +83,7 @@ export default async function CaseStudy({
           </Reveal>
         </Container>
 
-        <section className="bg-block py-16 text-block-ink">
+        <section className="border-t border-line py-16">
           <Container>
             <Reveal>
               <h2 className="font-display mb-8 text-3xl">Outcomes</h2>
@@ -91,7 +91,7 @@ export default async function CaseStudy({
             <div className="grid gap-6 sm:grid-cols-3">
               {project.outcomes.map((o, i) => (
                 <Reveal key={o} delay={i * 0.05}>
-                  <div className="h-full rounded-2xl bg-block-surface p-6 text-sm leading-relaxed">
+                  <div className="h-full rounded-2xl border border-line bg-surface p-6 text-sm leading-relaxed">
                     {o}
                   </div>
                 </Reveal>
@@ -131,7 +131,7 @@ export default async function CaseStudy({
             <Reveal>
               <p className="mb-8 rounded-2xl border border-line bg-accent-soft/40 p-6 text-sm leading-relaxed">
                 <span className="font-medium">Under NDA.</span> The product
-                interface is confidential — shown here are public marketing
+                interface is confidential. Shown here are public marketing
                 materials and the platform login only. Outcomes above are
                 publicly listed figures.
               </p>

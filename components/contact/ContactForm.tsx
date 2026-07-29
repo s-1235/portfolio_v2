@@ -30,14 +30,14 @@ export default function ContactForm() {
       form.reset();
     } catch {
       setStatus("error");
-      setError("Network error — please try again.");
+      setError("Network error. Please try again.");
     }
   }
 
   if (status === "sent") {
     return (
       <p className="rounded-2xl border border-line bg-surface p-6 text-lg">
-        Thanks — your message is on its way. I&apos;ll get back to you soon.
+        Thanks! Your message is on its way. I&apos;ll get back to you soon.
       </p>
     );
   }

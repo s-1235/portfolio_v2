@@ -74,21 +74,21 @@ export const projects: Project[] = [
       {
         src: "/projects/podding/marketing-hero.png",
         alt: "Podding marketing site hero",
-        caption: "Client marketing site — podding.co",
+        caption: "Client marketing site, podding.co",
         width: 1920,
         height: 1200,
       },
       {
         src: "/projects/podding/pod-system.png",
         alt: "The Pod System section of the Podding site",
-        caption: "The Pod System — public marketing material",
+        caption: "The Pod System, public marketing material",
         width: 1920,
         height: 1200,
       },
       {
         src: "/projects/podding/app-login.png",
         alt: "Podding platform login screen",
-        caption: "Platform login — product interface under NDA",
+        caption: "Platform login. Product interface under NDA",
         width: 1440,
         height: 900,
       },
@@ -106,7 +106,7 @@ export const projects: Project[] = [
     summary:
       "AI-driven VA hiring marketplace where recruitment runs with minimal manual involvement. Multi-agent automation reduced hiring time by 90%.",
     problem:
-      "Matching virtual assistants with employers required manual screening, skill assessment, and pairing — slow, inconsistent, and impossible to scale.",
+      "Matching virtual assistants with employers required manual screening, skill assessment, and pairing: slow, inconsistent, and impossible to scale.",
     approach:
       "Built the marketplace SaaS from scratch and designed a LangGraph multi-agent system that automates the recruitment flow: semantic skill matching over Pinecone embeddings, automated screening, and Stripe-powered payments on a Django + Next.js stack.",
     outcomes: [
@@ -152,7 +152,7 @@ export const projects: Project[] = [
     period: "2025",
     role: "Full-Stack AI Developer",
     summary:
-      "Diagnostic platform on fine-tuned medical models — 87% accuracy on X-ray fracture detection, trained on a 30K+ image dataset. HIPAA & FHIR compliant.",
+      "Diagnostic platform on fine-tuned medical models with 87% accuracy on X-ray fracture detection, trained on a 30K+ image dataset. HIPAA & FHIR compliant.",
     problem:
       "Clinics needed faster preliminary reads across radiology, ophthalmology, and dermatology without shipping patient data to opaque third-party services.",
     approach:
@@ -188,9 +188,9 @@ export const projects: Project[] = [
     period: "2023 – 2024",
     role: "Founder & Full-Stack AI Developer",
     summary:
-      "Commercial AI browser extension for web productivity — content capture, FAISS-backed RAG, summarization. Built and shipped solo, founder to launch.",
+      "Commercial AI browser extension for web productivity: content capture, FAISS-backed RAG, summarization. Built and shipped solo, founder to launch.",
     problem:
-      "Everyday web work — writing LinkedIn content, filling forms, digesting long pages — meant constant context-switching to external AI tools that know nothing about the page you're on.",
+      "Everyday web work like writing LinkedIn content, filling forms, and digesting long pages meant constant context-switching to external AI tools that know nothing about the page you're on.",
     approach:
       "Founded and shipped the product solo: a Chrome extension with real-time content capture feeding a FAISS-backed RAG pipeline for context-aware Q&A, LinkedIn content generation, smart form auto-fill, and summarization. Django backend on AWS EC2 with Lemonsqueezy payments and CI/CD.",
     outcomes: [
@@ -221,7 +221,7 @@ export const projects: Project[] = [
       {
         src: "/projects/sitescripter/site-hero.png",
         alt: "SiteScripter AI website hero",
-        caption: "Product site — sitescripter.co",
+        caption: "Product site, sitescripter.co",
         width: 1920,
         height: 1200,
       },
@@ -244,7 +244,7 @@ export const projects: Project[] = [
     period: "2021 – 2022",
     role: "Full-Stack Developer",
     summary:
-      "Service-business management platform handling bookings, staff coordination, and client data — centralized scheduling with real-time consistency enforcement.",
+      "Service-business management platform handling bookings, staff coordination, and client data. Centralized scheduling with real-time consistency enforcement.",
     problem:
       "Salons and spas juggle staff calendars, client bookings, and walk-ins across tools that drift out of sync, causing double-bookings and lost revenue.",
     approach:

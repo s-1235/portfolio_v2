@@ -27,7 +27,7 @@ export default function WorkPage() {
             </h1>
           </Reveal>
         </Container>
-        <section className="bg-block py-16 text-block-ink">
+        <section className="pb-20">
           <Container>
             <WorkGrid projects={projects} />
           </Container>

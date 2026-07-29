@@ -34,28 +34,27 @@ export default function Home() {
           </Reveal>
         </Container>
 
-        <section id="work" className="bg-block py-20 text-block-ink">
+        <section id="work" className="border-t border-line py-20">
           <Container>
             <Reveal>
               <h2 className="font-display mb-4 text-3xl sm:text-4xl">
                 Selected work
               </h2>
-              <p className="mb-10 max-w-xl text-block-muted">
-                A few of the products I&apos;ve built and scaled. Full case
-                studies are on the way.
+              <p className="mb-12 max-w-xl text-muted">
+                A few of the products I&apos;ve built and scaled.
               </p>
             </Reveal>
-            <div className="grid gap-6 sm:grid-cols-2">
+            <div className="grid gap-x-8 gap-y-14 sm:grid-cols-2">
               {featuredProjects.map((p, i) => (
                 <Reveal key={p.slug} delay={i * 0.05}>
                   <ProjectCard project={p} />
                 </Reveal>
               ))}
             </div>
-            <Reveal className="mt-10">
+            <Reveal className="mt-12">
               <Link
                 href="/work"
-                className="text-sm font-medium text-block-ink transition hover:text-accent"
+                className="text-sm font-medium transition hover:text-accent"
               >
                 View all work →
               </Link>

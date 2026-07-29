@@ -5,7 +5,7 @@ export const siteUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
 
 export const site = {
   name: "Sadam Khan",
-  title: "Sadam Khan — Full-Stack Engineer · AI Systems",
+  title: "Sadam Khan · Full-Stack Engineer · AI Systems",
   positioning: "Full-Stack Engineer · AI Systems",
   description:
     "Full-stack engineer building and scaling SaaS products and LLM-powered applications.",
@@ -13,10 +13,10 @@ export const site = {
   email: "sadamkhan505880@gmail.com",
   heroHeading: "Building AI products that ship, scale, and stick.",
   heroSub:
-    "I'm Sadam Khan — a full-stack engineer specializing in SaaS products and LLM-powered applications, from architecture to the last interaction detail.",
+    "I'm Sadam Khan, a full-stack engineer specializing in SaaS products and LLM-powered applications, from architecture to the last interaction detail.",
   bio: [
-    "I specialize in full-stack development and AI systems — building and scaling SaaS products and LLM-powered applications. My focus is diagnosing and resolving performance, architectural, and behavioral issues in production, and I currently concentrate on LLM evaluation and benchmark design.",
-    "Over the last six years I've shipped products across podcasting, recruitment, healthcare, and developer tooling — as a founder, senior engineer, and consultant.",
+    "I specialize in full-stack development and AI systems, building and scaling SaaS products and LLM-powered applications. My focus is diagnosing and resolving performance, architectural, and behavioral issues in production, and I currently concentrate on LLM evaluation and benchmark design.",
+    "Over the last six years I've shipped products across podcasting, recruitment, healthcare, and developer tooling as a founder, senior engineer, and consultant.",
   ],
   toptalBadge:
     "https://www.toptal.com/developers/resume/saddam-hussain",
