@@ -262,10 +262,21 @@ Vercel CLI installed globally + repo linked (.vercel/ + .env.local gitignored).
 Sadam is logged in via `vercel login` — future sessions can use vercel
 CLI/API directly (auth token in ~/.local/share/com.vercel.cli/auth.json).
 
-### Phase 8 — Ship
-- [ ] 8.1 Commit history clean on `rebuild`; merge to main (with Sadam)
-- [ ] 8.2 Deploy (Vercel), verify production URL, submit sitemap
-- [ ] 8.3 Archive old code (tag pre-rebuild commit), update README
+### Phase 8 — Ship ✅ (2026-07-29)
+- [x] 8.1 main synced with rebuild continuously (same tip); history clean, all
+      commits authored by Sadam
+- [x] 8.2 Production live + verified: https://portfolio-v2-fawn-nine.vercel.app
+      (sitemap submission to Search Console = Sadam, needs his Google account)
+- [x] 8.3 Tags: v2-legacy (root commit, old site archive) + v3.0.0 (rebuild ship).
+      README rewritten for the new site.
+
+## PENDING on Sadam (post-ship)
+- [ ] RESEND_API_KEY (+ optional CONTACT_TO_EMAIL) in Vercel env → then e2e
+      contact-form delivery test
+- [ ] Enable Analytics in Vercel dashboard
+- [ ] Real social links (LinkedIn/X/GitHub) → content/site.ts socials
+- [ ] Real photo for /about (cartoon avatar currently); resume PDF for download
+- [ ] Optional: custom domain; submit sitemap in Google Search Console
 
 ### Backlog / later
 - [ ] /playground or /writing section
