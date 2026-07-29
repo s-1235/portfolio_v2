@@ -246,6 +246,17 @@ Work top to bottom; each step has its own verification. Mark [x] as steps comple
 - [x] 7.3 Content metrics cross-checked against Toptal record — all match. NDA
       compliance: Podding = marketing site + login + public metrics only ✓
 
+### Vercel production (FIXED 2026-07-29)
+Root cause of all failing deploys: project had Node.js Version pinned to
+discontinued "16.x" (2021-era setting) — builds aborted in ~5s before install.
+Fixed via API PATCH nodeVersion→"22.x" (project prj_SlQ8xZllgNP1ocuAuV4wzyGJpJgQ,
+team s1235s-projects) + redeploy. Production URL:
+https://portfolio-v2-fawn-nine.vercel.app — verified: all routes 200, sitemap
+uses prod domain, /api/contact 405 on GET (POST-only, correct).
+Vercel CLI installed globally + repo linked (.vercel/ + .env.local gitignored).
+Sadam is logged in via `vercel login` — future sessions can use vercel
+CLI/API directly (auth token in ~/.local/share/com.vercel.cli/auth.json).
+
 ### Phase 8 — Ship
 - [ ] 8.1 Commit history clean on `rebuild`; merge to main (with Sadam)
 - [ ] 8.2 Deploy (Vercel), verify production URL, submit sitemap
