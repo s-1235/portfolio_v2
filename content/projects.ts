@@ -275,6 +275,78 @@ export const projects: Project[] = [
       },
     ],
   },
+  {
+    slug: "revinate",
+    name: "Revinate",
+    tagline: "Enterprise hospitality data at scale.",
+    tags: "SaaS · Hospitality",
+    category: ["full-stack"],
+    period: "2021 – 2022",
+    role: "Full-Stack Developer",
+    summary:
+      "Enterprise hotel management platform serving 5,000+ properties. Work across React, Node.js, Python, and Java services with real-time Kafka data pipelines.",
+    problem:
+      "Hotel groups run marketing and revenue on guest data scattered across property systems. At enterprise scale that demands reliable, real-time pipelines across distributed services.",
+    approach:
+      "Contributed across a distributed microservices platform: React frontends, Node.js, Python, and Java services, and real-time data pipelines built on Kafka with Protobuf schemas.",
+    outcomes: [
+      "Platform served 5,000+ hotel properties",
+      "Real-time data pipelines with Kafka and Protobuf",
+      "Contributions spanning four service stacks",
+    ],
+    stack: [
+      "React",
+      "Node.js",
+      "Python",
+      "Java",
+      "Kafka",
+      "Protobuf",
+      "Microservices",
+    ],
+    links: [{ label: "Website", href: "https://www.revinate.com/" }],
+    assetsDir: "content-assets/revinate",
+    images: [
+      {
+        src: "/projects/revinate/home-hero.png",
+        alt: "Revinate marketing site homepage",
+        caption: "revinate.com",
+        width: 1920,
+        height: 1200,
+      },
+    ],
+  },
+  {
+    slug: "kallidus",
+    name: "Kallidus",
+    tagline: "Learning platform APIs, 20x faster reports.",
+    tags: "SaaS · HR Tech",
+    category: ["full-stack"],
+    period: "2020 – 2021",
+    role: "Software Engineer",
+    summary:
+      "HR and learning software: Ruby on Rails REST APIs with background processing, report generation cut from 60 minutes to 3, and a Vue-to-React migration.",
+    problem:
+      "Learning platforms carry heavy reporting workloads. A key CSV report took 60 minutes to generate, and aging frontend code slowed feature work.",
+    approach:
+      "Built Rails REST APIs with background processing, restructured the database schema with strategic indexing to speed up reporting, built a custom npm state-management library, and executed a Vue-to-React migration.",
+    outcomes: [
+      "Report generation cut from 60 minutes to 3 minutes",
+      "Custom npm state library adopted by 50+ components",
+      "Completed a Vue-to-React migration",
+    ],
+    stack: ["Ruby on Rails", "REST APIs", "Vue", "React", "npm", "SQL"],
+    links: [{ label: "Website", href: "https://www.kallidus.com/" }],
+    assetsDir: "content-assets/kallidus",
+    images: [
+      {
+        src: "/projects/kallidus/home-hero.png",
+        alt: "Kallidus marketing site homepage",
+        caption: "kallidus.com",
+        width: 1920,
+        height: 1200,
+      },
+    ],
+  },
 ];
 
 export const featuredProjects = projects
