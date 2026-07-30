@@ -12,6 +12,12 @@ export default function SiteHeader() {
           <Link href="/work" className="text-muted transition hover:text-ink">
             Work
           </Link>
+          <Link
+            href="/writing"
+            className="text-muted transition hover:text-ink"
+          >
+            Writing
+          </Link>
           <Link href="/about" className="text-muted transition hover:text-ink">
             About
           </Link>

@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { projects } from "@/content/projects";
+import { posts } from "@/content/writing";
 import { siteUrl } from "@/content/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -9,6 +10,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...projects.map((p) => ({
       url: `${siteUrl}/work/${p.slug}`,
       priority: 0.8,
+    })),
+    { url: `${siteUrl}/writing`, priority: 0.7 },
+    ...posts.map((p) => ({
+      url: `${siteUrl}/writing/${p.slug}`,
+      priority: 0.6,
     })),
     { url: `${siteUrl}/about`, priority: 0.7 },
   ];

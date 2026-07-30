@@ -1,0 +1,75 @@
+import PostLayout from "@/components/writing/PostLayout";
+
+export const metadata = {
+  title: "Rebuilding my portfolio for the AI era",
+  description:
+    "Why I threw away my 2021 portfolio and what I learned shipping the new one.",
+};
+
+<PostLayout
+  title="Rebuilding my portfolio for the AI era"
+  date="2026-07-29"
+>
+
+My old portfolio was a 2021 artifact: dark theme, a nine second preloader with
+background audio, WebGL hover effects, and a project list that ended in 2022.
+It looked like every other developer portfolio of that generation, and it said
+nothing about what I actually do now, which is building and evaluating
+LLM-powered products.
+
+So I rebuilt it from scratch. A few decisions turned out to matter more than
+the rest.
+
+## Restraint beats spectacle
+
+When anyone can generate a flashy site in an afternoon, spectacle is cheap.
+What is expensive, and what actually signals competence, is evidence:
+real projects, real metrics, real architectural decisions explained plainly.
+The new design borrows from editorial portfolio sites: light background, two
+typefaces, one accent color, big screenshots, and case studies that follow a
+fixed shape of problem, approach, outcomes, stack.
+
+## Content as typed data
+
+Every project, role, and line of copy lives in a typed `content/` directory.
+The pages are just renderers. Adding a project is one entry in
+`projects.ts` with the compiler checking the shape. Case studies get NDA and
+visuals-pending flags, because honesty about what I cannot show reads better
+than pretending it does not exist.
+
+## Two bugs worth writing down
+
+**A discontinued Node pin can outlive the site that set it.** My Vercel
+project still carried a Node 16 setting from 2021. Every deploy of the new
+Next.js 16 app died in five seconds, before install, with a one line error
+buried in the build log. The code was never the problem. If a build fails
+faster than an install could possibly run, look at the platform settings, not
+the repository.
+
+**`useReducedMotion` cannot save you at hydration time.** My scroll reveals
+respected reduced motion via the hook, or so I thought. The hook returns its
+real value only after mount, while the animation library bakes the hidden
+initial state into the server-rendered HTML and reads `initial` exactly once.
+Users with reduced motion enabled got every animation anyway. The fix was to
+stop trusting JS timing entirely and enforce it in CSS:
+
+```css
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe-anim {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+```
+
+Inline styles lose to `!important`, so this wins no matter when React wakes
+up. Accessibility guarantees belong in the layer that cannot race.
+
+## What is next
+
+The site now ships with a contact pipeline, structured case studies, and this
+writing section. The plan is short notes like this one: benchmark design,
+agent orchestration patterns, and the unglamorous production details that
+actually decide whether AI products work.
+
+</PostLayout>

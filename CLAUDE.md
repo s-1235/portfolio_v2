@@ -279,9 +279,15 @@ CLI/API directly (auth token in ~/.local/share/com.vercel.cli/auth.json).
 - [ ] Optional: custom domain; submit sitemap in Google Search Console
 
 ### Backlog / later
-- [ ] /playground or /writing section
-- [ ] Analytics (GA4 or Vercel Analytics)
-- [ ] Resume download on /about
+- [x] /writing section SHIPPED (2026-07-29, Sadam chose it over /playground):
+      @next/mdx pipeline (pageExtensions md/mdx, mdx-components.tsx at root),
+      content/writing.ts registry drives index + sitemap, .prose CSS in globals,
+      components/writing/PostLayout.tsx, posts live at app/writing/<slug>/page.mdx.
+      First post: "Rebuilding my portfolio for the AI era" (drafted by Claude in
+      Sadam's voice from true build facts — SADAM SHOULD REVIEW/EDIT before
+      promoting it anywhere). New post = registry entry + page.mdx file.
+- [ ] /playground (only when 1-2 real demos exist)
+- [ ] Resume download on /about (needs PDF from Sadam)
 
 ## Conventions for future sessions
 
