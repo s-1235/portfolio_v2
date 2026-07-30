@@ -286,7 +286,19 @@ CLI/API directly (auth token in ~/.local/share/com.vercel.cli/auth.json).
       First post: "Rebuilding my portfolio for the AI era" (drafted by Claude in
       Sadam's voice from true build facts — SADAM SHOULD REVIEW/EDIT before
       promoting it anywhere). New post = registry entry + page.mdx file.
-- [ ] /playground (only when 1-2 real demos exist)
+- [x] /playground SHIPPED (2026-07-30, Sadam chose agent-pipeline demo):
+      content/playground.ts registry + app/playground (index) + app/playground/
+      agent-pipeline + components/playground/AgentPipelineDemo.tsx (client,
+      scripted simulation: planner → 3 parallel workers incl. retry state →
+      judge; Play/Step/Reset; clearly labeled simulated; animate-pulse has
+      motion-reduce:animate-none). Playground nav link hidden on mobile
+      (sm:inline) to avoid header overflow; mobile CTA label is "Contact".
+      FIXED during build: mobile horizontal overflow on / and /work (was LIVE
+      in prod since image-led redesign) — grid children needed min-w-0 + card
+      img w-full; grid min-content sizing ignores percentage max-width.
+      LESSON: after rm -rf .next, ALWAYS hard-kill the old `next start`
+      (fuser -k 3199/tcp) before re-verifying — stale servers serve old markup
+      with broken CSS and produce false test results (bit us twice).
 - [ ] Resume download on /about (needs PDF from Sadam)
 
 ## Conventions for future sessions

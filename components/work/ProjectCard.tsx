@@ -5,7 +5,7 @@ import type { Project } from "@/content/projects";
 export default function ProjectCard({ project }: { project: Project }) {
   const thumb = project.images[0];
   return (
-    <Link href={`/work/${project.slug}`} className="group block">
+    <Link href={`/work/${project.slug}`} className="group block min-w-0">
       {thumb ? (
         <div className="overflow-hidden rounded-2xl border border-line bg-surface">
           <Image
@@ -14,7 +14,7 @@ export default function ProjectCard({ project }: { project: Project }) {
             width={thumb.width}
             height={thumb.height}
             sizes="(min-width: 1024px) 560px, 100vw"
-            className="aspect-[8/5] object-cover object-top transition duration-500 group-hover:scale-[1.02]"
+            className="aspect-[8/5] w-full object-cover object-top transition duration-500 group-hover:scale-[1.02]"
           />
         </div>
       ) : (

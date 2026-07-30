@@ -46,7 +46,7 @@ export default function Home() {
             </Reveal>
             <div className="grid gap-x-8 gap-y-14 sm:grid-cols-2">
               {featuredProjects.map((p, i) => (
-                <Reveal key={p.slug} delay={i * 0.05}>
+                <Reveal key={p.slug} delay={i * 0.05} className="min-w-0">
                   <ProjectCard project={p} />
                 </Reveal>
               ))}
