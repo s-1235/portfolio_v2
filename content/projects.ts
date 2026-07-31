@@ -258,6 +258,7 @@ export const projects: Project[] = [
       { label: "Website", href: "https://joinmya.com/pricing-mya-team/" },
     ],
     assetsDir: "content-assets/mya",
+    featured: 5,
     images: [
       {
         src: "/projects/mya/home-hero.png",
@@ -305,6 +306,7 @@ export const projects: Project[] = [
     ],
     links: [{ label: "Website", href: "https://www.revinate.com/" }],
     assetsDir: "content-assets/revinate",
+    featured: 6,
     images: [
       {
         src: "/projects/revinate/home-hero.png",
@@ -337,6 +339,7 @@ export const projects: Project[] = [
     stack: ["Ruby on Rails", "REST APIs", "Vue", "React", "npm", "SQL"],
     links: [{ label: "Website", href: "https://www.kallidus.com/" }],
     assetsDir: "content-assets/kallidus",
+    featured: 7,
     images: [
       {
         src: "/projects/kallidus/home-hero.png",

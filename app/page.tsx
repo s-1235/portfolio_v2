@@ -41,7 +41,7 @@ export default function Home() {
                 Selected work
               </h2>
               <p className="mb-12 max-w-xl text-muted">
-                A few of the products I&apos;ve built and scaled.
+                Products I&apos;ve built and scaled, end to end.
               </p>
             </Reveal>
             <div className="grid gap-x-8 gap-y-14 sm:grid-cols-2">
