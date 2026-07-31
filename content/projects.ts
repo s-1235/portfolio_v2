@@ -41,16 +41,16 @@ export const projects: Project[] = [
     tagline: "AI-driven podcast guest booking, end to end.",
     tags: "AI · SaaS",
     category: ["ai", "full-stack"],
-    period: "2024 – 2025",
-    role: "Senior Full-Stack AI Developer (solo build)",
+    period: "2024 to 2025",
+    role: "Senior Full-Stack AI Developer",
     summary:
-      "AI-driven podcast guest booking platform automating end-to-end workflows with semantic matching. Cut workflow time by 85–88% with a 95% podcast acceptance rate.",
+      "AI-driven podcast guest booking platform automating end-to-end workflows with semantic matching. Cut workflow time by 85 to 88% with a 95% podcast acceptance rate.",
     problem:
       "Booking podcast guests is a manual grind: researching shows, matching topics, outreach, and follow-ups consume hours per placement and most pitches go unanswered.",
     approach:
       "Built the platform solo: LangGraph-orchestrated agents over a RAG pipeline with vector-database semantic matching between guests and shows, Rephonic API for podcast data, automated email outreach with response tracking, and real-time updates over Socket.IO. Django/Celery backend, Next.js + Shadcn UI frontend, deployed across Vercel and AWS Lambda.",
     outcomes: [
-      "Reduced end-to-end workflow time by 85–88%",
+      "Reduced end-to-end workflow time by 85 to 88%",
       "95% podcast acceptance rate via semantic matching",
       "Fully automated outreach and response tracking",
     ],
@@ -74,21 +74,21 @@ export const projects: Project[] = [
       {
         src: "/projects/podding/marketing-hero.png",
         alt: "Podding marketing site hero",
-        caption: "Client marketing site, podding.co",
+        caption: "podding.co",
         width: 1920,
         height: 1200,
       },
       {
         src: "/projects/podding/pod-system.png",
         alt: "The Pod System section of the Podding site",
-        caption: "The Pod System, public marketing material",
+        caption: "The Pod System",
         width: 1920,
         height: 1200,
       },
       {
         src: "/projects/podding/app-login.png",
         alt: "Podding platform login screen",
-        caption: "Platform login. Product interface under NDA",
+        caption: "Platform login",
         width: 1440,
         height: 900,
       },
@@ -101,7 +101,7 @@ export const projects: Project[] = [
     tagline: "A hiring marketplace that runs itself.",
     tags: "AI · Marketplace",
     category: ["ai", "full-stack"],
-    period: "2022 – 2023",
+    period: "2022 to 2023",
     role: "Full-Stack AI Developer",
     summary:
       "AI-driven VA hiring marketplace where recruitment runs with minimal manual involvement. Multi-agent automation reduced hiring time by 90%.",
@@ -127,7 +127,7 @@ export const projects: Project[] = [
     ],
     links: [
       {
-        label: "Marketplace era (archive)",
+        label: "Original marketplace site",
         href: "https://web.archive.org/web/20240524015222/https://hirekayana.com/",
       },
     ],
@@ -136,7 +136,7 @@ export const projects: Project[] = [
       {
         src: "/projects/kayana/marketplace-hero.png",
         alt: "Kayana VA marketplace homepage, 2024",
-        caption: "Marketplace-era homepage (via Internet Archive, 2024)",
+        caption: "Marketplace homepage, 2024",
         width: 1920,
         height: 1200,
       },
@@ -185,7 +185,7 @@ export const projects: Project[] = [
     tagline: "An AI copilot for the browser, shipped solo.",
     tags: "AI · Chrome Extension",
     category: ["ai", "full-stack"],
-    period: "2023 – 2024",
+    period: "2023 to 2024",
     role: "Founder & Full-Stack AI Developer",
     summary:
       "Commercial AI browser extension for web productivity: content capture, FAISS-backed RAG, summarization. Built and shipped solo, founder to launch.",
@@ -241,7 +241,7 @@ export const projects: Project[] = [
     tagline: "Scheduling that never double-books.",
     tags: "SaaS · Scheduling",
     category: ["full-stack"],
-    period: "2021 – 2022",
+    period: "2021 to 2022",
     role: "Full-Stack Developer",
     summary:
       "Service-business management platform handling bookings, staff coordination, and client data. Centralized scheduling with real-time consistency enforcement.",
@@ -281,7 +281,7 @@ export const projects: Project[] = [
     tagline: "Enterprise hospitality data at scale.",
     tags: "SaaS · Hospitality",
     category: ["full-stack"],
-    period: "2021 – 2022",
+    period: "2021 to 2022",
     role: "Full-Stack Developer",
     summary:
       "Enterprise hotel management platform serving 5,000+ properties. Work across React, Node.js, Python, and Java services with real-time Kafka data pipelines.",
@@ -321,7 +321,7 @@ export const projects: Project[] = [
     tagline: "Learning platform APIs, 20x faster reports.",
     tags: "SaaS · HR Tech",
     category: ["full-stack"],
-    period: "2020 – 2021",
+    period: "2020 to 2021",
     role: "Software Engineer",
     summary:
       "HR and learning software: Ruby on Rails REST APIs with background processing, report generation cut from 60 minutes to 3, and a Vue-to-React migration.",
