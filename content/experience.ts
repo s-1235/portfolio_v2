@@ -7,13 +7,13 @@ export type Experience = {
 
 export const experience: Experience[] = [
   {
-    company: "Expert Crowd / Vetto Inc",
-    role: "Tech Support Specialist, LLM Enhancements",
+    company: "Vetto AI (Expert Crowd)",
+    role: "Full-Stack Engineer, LLM Evals",
     period: "2026",
     points: [
-      "Created an AI benchmark engineering handbook",
-      "Managed 300+ contributors on frontier model evaluation",
-      "Identified critical platform bugs and infrastructure issues; proposed improvements that were adopted",
+      "Built the Coding Arena platform in Next.js with agentic pipelines, VS Code integration, and sandboxed Oracle Cloud environments for LLM task runs",
+      "Created LLM eval tasks and the AI benchmark engineering handbook",
+      "Supported 300+ contributors building frontier AI benchmarks",
     ],
   },
   {

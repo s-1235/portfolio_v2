@@ -36,6 +36,47 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "vetto",
+    name: "Vetto AI",
+    tagline: "Where frontier AI benchmarks get built.",
+    tags: "AI · Evals",
+    category: ["ai", "full-stack"],
+    period: "2026",
+    role: "Full-Stack Engineer",
+    summary:
+      "Coding Arena, the platform where Vetto's expert talent builds frontier AI coding benchmarks. Next.js with agentic pipelines, VS Code integration, and sandboxed Oracle Cloud environments for LLM task runs.",
+    problem:
+      "Frontier labs need expert-authored coding benchmarks at scale. Contributors need a real engineering environment for that work: proper tooling, per-task constraints, and safe places for LLMs to attempt each task.",
+    approach:
+      "Worked as a full-stack engineer on Vetto's Coding Arena: a Next.js platform with an agentic pipeline architecture, Visual Studio Code integration for the talent pool, and sandboxed Oracle Cloud environments where different LLMs run against each task within its defined constraints. Also created LLM eval tasks and the AI benchmark engineering handbook used across contributors.",
+    outcomes: [
+      "Coding Arena gives Vetto's talent pool a smooth environment for benchmark work",
+      "300+ contributors supported on frontier model evaluation",
+      "Sandboxed multi-LLM task execution within per-task constraints",
+    ],
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Agentic Pipelines",
+      "VS Code Integration",
+      "Oracle Cloud Sandboxes",
+      "LLM Evals",
+      "Benchmark Design",
+    ],
+    links: [{ label: "vetto.ai", href: "https://vetto.ai/" }],
+    assetsDir: "content-assets/vetto",
+    images: [
+      {
+        src: "/projects/vetto/home-hero.png",
+        alt: "Vetto AI homepage: We shape how models learn",
+        caption: "vetto.ai",
+        width: 1920,
+        height: 1200,
+      },
+    ],
+    featured: 1,
+  },
+  {
     slug: "podding",
     name: "Podding",
     tagline: "AI-driven podcast guest booking, end to end.",
@@ -93,7 +134,7 @@ export const projects: Project[] = [
         height: 900,
       },
     ],
-    featured: 1,
+    featured: 2,
   },
   {
     slug: "kayana",
@@ -141,7 +182,7 @@ export const projects: Project[] = [
         height: 1200,
       },
     ],
-    featured: 2,
+    featured: 3,
   },
   {
     slug: "medical-imaging-ai",
@@ -177,7 +218,7 @@ export const projects: Project[] = [
     visualsPending: true,
     assetsDir: "",
     images: [],
-    featured: 3,
+    featured: 4,
   },
   {
     slug: "sitescripter",
@@ -233,7 +274,7 @@ export const projects: Project[] = [
         height: 3929,
       },
     ],
-    featured: 4,
+    featured: 5,
   },
   {
     slug: "mya",
@@ -258,7 +299,7 @@ export const projects: Project[] = [
       { label: "Website", href: "https://joinmya.com/pricing-mya-team/" },
     ],
     assetsDir: "content-assets/mya",
-    featured: 5,
+    featured: 6,
     images: [
       {
         src: "/projects/mya/home-hero.png",
@@ -306,7 +347,7 @@ export const projects: Project[] = [
     ],
     links: [{ label: "Website", href: "https://www.revinate.com/" }],
     assetsDir: "content-assets/revinate",
-    featured: 6,
+    featured: 7,
     images: [
       {
         src: "/projects/revinate/home-hero.png",
@@ -339,7 +380,7 @@ export const projects: Project[] = [
     stack: ["Ruby on Rails", "REST APIs", "Vue", "React", "npm", "SQL"],
     links: [{ label: "Website", href: "https://www.kallidus.com/" }],
     assetsDir: "content-assets/kallidus",
-    featured: 7,
+    featured: 8,
     images: [
       {
         src: "/projects/kallidus/home-hero.png",

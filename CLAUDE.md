@@ -251,6 +251,15 @@ Work top to bottom; each step has its own verification. Mark [x] as steps comple
 - [x] 7.3 Content metrics cross-checked against Toptal record — all match. NDA
       compliance: Podding = marketing site + login + public metrics only ✓
 
+### Vetto AI case study (2026-07-31, from Sadam's direct account)
+- Project #8, featured 1 (others renumbered 2 to 8); /work/vetto. Role updated in
+  experience.ts too: "Full-Stack Engineer, LLM Evals" at "Vetto AI (Expert Crowd)".
+- Content sources: Sadam's description (Coding Arena: Next.js, agentic pipelines,
+  VS Code integration, sandboxed Oracle Cloud envs for multi-LLM task runs, eval
+  task authoring) + Toptal record (300+ contributors, handbook) + vetto.ai public
+  site (frontier-lab evals positioning, ex-DeepMind/Meta/Mistral founders).
+  Public reviews sparse (young company). Hero captured from vetto.ai.
+
 ### Domain + full project roster (2026-07-30)
 - Case studies now 7: added revinate + kallidus (employer roles, category
   full-stack, marketing-site hero images from revinate.com/kallidus.com —
