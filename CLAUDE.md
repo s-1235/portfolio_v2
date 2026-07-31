@@ -251,6 +251,17 @@ Work top to bottom; each step has its own verification. Mark [x] as steps comple
 - [x] 7.3 Content metrics cross-checked against Toptal record — all match. NDA
       compliance: Podding = marketing site + login + public metrics only ✓
 
+### Domain + full project roster (2026-07-30)
+- Case studies now 7: added revinate + kallidus (employer roles, category
+  full-stack, marketing-site hero images from revinate.com/kallidus.com —
+  kallidus.com blocks headless UAs, needs real-UA override to capture).
+- **sadamkhan.vercel.app is LIVE**: the domain belonged to a second Vercel
+  project "sadamkhan" (Sept 2022, linked to the SAME repo, failing on Node 16
+  pin like portfolio-v2 did). Fixed its nodeVersion→22.x and redeployed; it now
+  serves the new site with correct self-referencing sitemap. NOTE: TWO projects
+  (sadamkhan + portfolio-v2) now auto-deploy every push to main. Recommend
+  eventually deleting portfolio-v2 project (or make one a redirect) — ask Sadam.
+
 ### Vercel production (FIXED 2026-07-29)
 Root cause of all failing deploys: project had Node.js Version pinned to
 discontinued "16.x" (2021-era setting) — builds aborted in ~5s before install.
