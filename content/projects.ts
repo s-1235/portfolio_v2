@@ -44,22 +44,23 @@ export const projects: Project[] = [
     period: "2026",
     role: "Full-Stack Engineer",
     summary:
-      "Coding Arena, the platform where Vetto's expert talent builds frontier AI coding benchmarks. Next.js with agentic pipelines, VS Code integration, and sandboxed Oracle Cloud environments for LLM task runs.",
+      "Coding Arena, the platform where Vetto's global talent pool authors frontier coding benchmarks: guided task creation, auto-generated oracles and test cases, sandboxed multi-model runs, and VS Code integration with live pass rates and budget tracking.",
     problem:
-      "Frontier labs need expert-authored coding benchmarks at scale. Contributors need a real engineering environment for that work: proper tooling, per-task constraints, and safe places for LLMs to attempt each task.",
+      "Frontier labs need benchmarks that make top models genuinely struggle on reasoning and agentic tasks: work that demands reading the full context, exploring the environment, and never assuming or hallucinating what is not there. Authoring such tasks is a craft. Each one must be provably solvable, must leak no part of the solution in its instructions, and must be calibrated so that even the strongest models pass only partially. Contributors need serious tooling to do that at scale.",
     approach:
-      "Worked as a full-stack engineer on Vetto's Coding Arena: a Next.js platform with an agentic pipeline architecture, Visual Studio Code integration for the talent pool, and sandboxed Oracle Cloud environments where different LLMs run against each task within its defined constraints. Also created LLM eval tasks and the AI benchmark engineering handbook used across contributors.",
+      "Built Coding Arena as a full-stack engineer on a Next.js and Django platform with an agentic pipeline architecture. A contributor picks a task category (software engineering, machine learning, computer vision, networking, and more), describes the task and its environment in plain language, and the system generates the task files, the oracle, and test cases, then runs frontier models against it inside a sandboxed environment the agent cannot bypass. Every task is executed across repeated runs per model, with log analysis to confirm the model follows the criteria and the instructions expose nothing. Tasks that models pass fully are sent back for refinement with harder reasoning challenges until they land in the target difficulty band. The VS Code integration gives contributors a sidebar with live logs, per-model pass rates, refinement history, and per-task budget tracking. I also authored eval tasks and the AI benchmark engineering handbook used across the talent pool.",
     outcomes: [
-      "Coding Arena gives Vetto's talent pool a smooth environment for benchmark work",
+      "Benchmark tasks calibrated so top frontier models pass only 30 to 40 percent",
+      "Guided pipeline from plain-language description to runnable, verified task",
       "300+ contributors supported on frontier model evaluation",
-      "Sandboxed multi-LLM task execution within per-task constraints",
     ],
     stack: [
       "Next.js",
+      "Django",
       "TypeScript",
       "Agentic Pipelines",
       "VS Code Integration",
-      "Oracle Cloud Sandboxes",
+      "Sandboxed Execution",
       "LLM Evals",
       "Benchmark Design",
     ],

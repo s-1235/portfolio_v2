@@ -11,7 +11,7 @@ export const experience: Experience[] = [
     role: "Full-Stack Engineer, LLM Evals",
     period: "2026",
     points: [
-      "Built the Coding Arena platform in Next.js with agentic pipelines, VS Code integration, and sandboxed Oracle Cloud environments for LLM task runs",
+      "Built the Coding Arena platform (Next.js, Django, agentic pipelines): guided task creation with auto-generated oracles and test cases, sandboxed multi-model runs, and VS Code integration with pass rates and budget tracking",
       "Created LLM eval tasks and the AI benchmark engineering handbook",
       "Supported 300+ contributors building frontier AI benchmarks",
     ],
