@@ -38,14 +38,14 @@ export default function AgentPipelinePage() {
           </Reveal>
           <Reveal className="mt-8">
             <p className="max-w-xl text-sm leading-relaxed text-muted">
-              This is not a scripted animation. The scheduler, retry policy,
-              budget accounting, and skip cascade are a real engine you are
-              stressing with the knobs above. Turn failure up with zero retries
+              This is a real engine, not an animation. The scheduler, retry
+              policy, budget accounting, and skip cascade all run live in the
+              page as you press Run. Turn failure up with zero retries
               and watch branches die; give it a tight budget and watch the
               expensive drafter starve. These are the same shapes I build in
               production with LangGraph: planners fanning out to tools, critics
-              gating merges, and budgets keeping agents honest. Runs are
-              reproducible: same seed, same story.
+              gating merges, and budgets that stop runaway spend. Runs are
+              reproducible, the same seed gives the same run.
             </p>
             <p className="mt-6">
               <Link

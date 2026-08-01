@@ -9,7 +9,7 @@ import { posts } from "@/content/writing";
 export const metadata: Metadata = {
   title: "Writing",
   description:
-    "Notes on building AI products, LLM evaluation, and full-stack engineering.",
+    "Notes on building AI products, LLM evaluation, and full stack engineering.",
 };
 
 const fmt = (iso: string) =>
@@ -32,7 +32,7 @@ export default function WritingPage() {
               Writing
             </p>
             <h1 className="font-display max-w-2xl text-4xl leading-[1.1] tracking-tight sm:text-5xl">
-              Notes from building with AI.
+              Notes from my work.
             </h1>
           </Reveal>
           <div className="mt-14 space-y-10">

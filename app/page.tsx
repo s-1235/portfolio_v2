@@ -41,7 +41,7 @@ export default function Home() {
                 Selected work
               </h2>
               <p className="mb-12 max-w-xl text-muted">
-                Products I&apos;ve built and scaled, end to end.
+                The products I have built and worked on.
               </p>
             </Reveal>
             <div className="grid gap-x-8 gap-y-14 sm:grid-cols-2">
@@ -79,11 +79,11 @@ export default function Home() {
           <Container>
             <Reveal>
               <h2 className="font-display mb-6 text-3xl sm:text-4xl">
-                Let&apos;s build something.
+                Get in touch.
               </h2>
               <p className="mb-8 max-w-xl text-lg leading-relaxed text-muted">
-                Have a product to ship or a system to scale? I&apos;m open to
-                select engagements. Use the form, or{" "}
+                If you want to build something together or need help with an
+                existing system, send me a message here or{" "}
                 <a
                   href={`mailto:${site.email}`}
                   className="font-medium text-accent hover:underline"

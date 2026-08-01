@@ -37,7 +37,7 @@ export default function ContactForm() {
   if (status === "sent") {
     return (
       <p className="rounded-2xl border border-line bg-surface p-6 text-lg">
-        Thanks! Your message is on its way. I&apos;ll get back to you soon.
+        Thanks, your message has been sent. I will get back to you soon.
       </p>
     );
   }

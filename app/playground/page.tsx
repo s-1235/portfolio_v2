@@ -9,7 +9,7 @@ import { demos } from "@/content/playground";
 export const metadata: Metadata = {
   title: "Playground",
   description:
-    "Interactive demos of the patterns behind my work: agents, retrieval, and orchestration.",
+    "Interactive demos from my work with agents and orchestration.",
 };
 
 const fmt = (iso: string) =>
@@ -31,7 +31,7 @@ export default function PlaygroundPage() {
               Playground
             </p>
             <h1 className="font-display max-w-2xl text-4xl leading-[1.1] tracking-tight sm:text-5xl">
-              Patterns you can poke at.
+              Small tools you can try in the browser.
             </h1>
           </Reveal>
           <div className="mt-14 space-y-10">

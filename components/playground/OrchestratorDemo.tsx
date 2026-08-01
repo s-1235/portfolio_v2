@@ -423,7 +423,7 @@ export default function OrchestratorDemo() {
         ))}
         {log.length === 0 && (
           <p className="opacity-50">
-            Set the knobs and press Run. Same seed, same story.
+            Set the knobs and press Run.
           </p>
         )}
       </div>

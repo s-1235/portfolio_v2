@@ -13,6 +13,6 @@ export const posts: Post[] = [
     title: "Rebuilding my portfolio for the AI era",
     date: "2026-07-29",
     summary:
-      "Why I threw away my 2021 portfolio and what I learned shipping the new one: design restraint, typed content, and two production bugs worth writing down.",
+      "Why I rebuilt my portfolio from scratch and the two production bugs I hit on the way.",
   },
 ];

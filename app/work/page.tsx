@@ -9,7 +9,7 @@ import { projects } from "@/content/projects";
 export const metadata: Metadata = {
   title: "Work",
   description:
-    "Selected projects: AI products, SaaS platforms, and full-stack systems built and scaled by Sadam Khan.",
+    "Projects by Sadam Khan: AI products, SaaS platforms, and full stack systems.",
 };
 
 export default function WorkPage() {
@@ -23,7 +23,7 @@ export default function WorkPage() {
               Work
             </p>
             <h1 className="font-display max-w-2xl text-4xl leading-[1.1] tracking-tight sm:text-5xl">
-              Products built end-to-end, from architecture to launch.
+              Everything I have built, in one place.
             </h1>
           </Reveal>
         </Container>
