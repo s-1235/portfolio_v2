@@ -303,12 +303,17 @@ CLI/API directly (auth token in ~/.local/share/com.vercel.cli/auth.json).
       README rewritten for the new site.
 
 ## PENDING on Sadam (post-ship)
-- [ ] RESEND_API_KEY (+ optional CONTACT_TO_EMAIL) in Vercel env → then e2e
-      contact-form delivery test
+- [x] RESEND_API_KEY set on BOTH projects (2026-08-01, prod+preview, encrypted).
+      E2E test passed: POST /api/contact returned ok:true (Resend accepted).
+      Sender = onboarding@resend.dev sandbox, delivers to account owner inbox
+      (sadamkhan505880@gmail.com). Sadam to confirm receipt in inbox.
+- [x] Socials final: GitHub s-1235, LinkedIn sadam-khan-9aba2b213 (confirmed by
+      Sadam), X @SadamKh88866704 (added 2026-08-01), Toptal badge.
 - [ ] Enable Analytics in Vercel dashboard
-- [ ] Real social links (LinkedIn/X/GitHub) → content/site.ts socials
 - [ ] Real photo for /about (cartoon avatar currently); resume PDF for download
-- [ ] Optional: custom domain; submit sitemap in Google Search Console
+- [ ] Sadam to review /work/vetto claims + the writing post (published in his name)
+- [ ] Optional: custom domain; submit sitemap in Search Console; delete duplicate
+      portfolio-v2 Vercel project (sadamkhan project is canonical now)
 
 ### Backlog / later
 - [x] /writing section SHIPPED (2026-07-29, Sadam chose it over /playground):
