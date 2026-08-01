@@ -9,9 +9,9 @@ export type Demo = {
 export const demos: Demo[] = [
   {
     slug: "agent-pipeline",
-    title: "Agent pipeline visualizer",
-    date: "2026-07-30",
+    title: "Agent orchestrator",
+    date: "2026-08-01",
     summary:
-      "A step-through simulation of a multi-agent orchestration pattern: a planner decomposing work, parallel workers with retries, and a judge merging results.",
+      "A working orchestration engine in the browser: dependency scheduling, parallel tool calls, seeded failure injection, retries with backoff, skip cascades, and token budget accounting.",
   },
 ];

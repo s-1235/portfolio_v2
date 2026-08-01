@@ -4,12 +4,12 @@ import SiteHeader from "@/components/layout/SiteHeader";
 import SiteFooter from "@/components/layout/SiteFooter";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/motion/Reveal";
-import AgentPipelineDemo from "@/components/playground/AgentPipelineDemo";
+import OrchestratorDemo from "@/components/playground/OrchestratorDemo";
 
 export const metadata: Metadata = {
-  title: "Agent pipeline visualizer",
+  title: "Agent orchestrator",
   description:
-    "A step-through simulation of a multi-agent orchestration pattern: planner, parallel workers with retries, and a judge.",
+    "A real agent orchestration engine running in the browser: dependency scheduling, parallel tool calls, seeded failure injection, retries with backoff, and budget accounting.",
 };
 
 export default function AgentPipelinePage() {
@@ -23,23 +23,29 @@ export default function AgentPipelinePage() {
               Playground
             </p>
             <h1 className="font-display max-w-2xl text-4xl leading-[1.1] tracking-tight sm:text-5xl">
-              Agent pipeline visualizer
+              Agent orchestrator
             </h1>
             <p className="mt-4 max-w-xl text-lg leading-relaxed text-muted">
-              The orchestration shape behind systems like Podding and Kayana: a
-              planner decomposes the request, workers run in parallel and
-              sometimes retry, and a judge scores and merges the results.
+              A working orchestration engine, running entirely in your browser.
+              It resolves a dependency graph, fans tool calls out under a
+              concurrency cap, injects seeded failures, retries with
+              exponential backoff, cascades skips past dead branches, and
+              charges every attempt against a token budget.
             </p>
           </Reveal>
           <Reveal className="mt-10">
-            <AgentPipelineDemo />
+            <OrchestratorDemo />
           </Reveal>
           <Reveal className="mt-8">
             <p className="max-w-xl text-sm leading-relaxed text-muted">
-              This is a simulation: timings are scripted and no model calls are
-              made. The pattern is real. In production I build it with
-              LangGraph, where each node is an agent with tools and the judge
-              step is what keeps parallel work coherent.
+              This is not a scripted animation. The scheduler, retry policy,
+              budget accounting, and skip cascade are a real engine you are
+              stressing with the knobs above. Turn failure up with zero retries
+              and watch branches die; give it a tight budget and watch the
+              expensive drafter starve. These are the same shapes I build in
+              production with LangGraph: planners fanning out to tools, critics
+              gating merges, and budgets keeping agents honest. Runs are
+              reproducible: same seed, same story.
             </p>
             <p className="mt-6">
               <Link

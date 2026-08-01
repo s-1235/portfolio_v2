@@ -251,6 +251,18 @@ Work top to bottom; each step has its own verification. Mark [x] as steps comple
 - [x] 7.3 Content metrics cross-checked against Toptal record — all match. NDA
       compliance: Podding = marketing site + login + public metrics only ✓
 
+### Playground v2 (2026-08-01, Sadam: scripted demo too weak)
+- AgentPipelineDemo (scripted) REPLACED by components/playground/
+  OrchestratorDemo.tsx: a REAL engine in the browser. 8-node DAG (planner,
+  3 tools, drafter, citations, critic, finalizer), scheduler loop with
+  concurrency cap, seeded PRNG (mulberry32) failure injection on tool nodes,
+  retries with exponential backoff, skip cascades on upstream failure, token
+  budget accounting, cancel, metrics tiles, event log. Same slug
+  /playground/agent-pipeline (URL stable). Functionally tested: default run
+  8/8 success; 60% failure + 0 retries run gives failed tools + cascaded
+  skips + partial completion. Both domains verified serving the new site
+  (user cache was showing them the old one).
+
 ### Vetto AI case study (2026-07-31, from Sadam's direct account)
 - Project #8, featured 1 (others renumbered 2 to 8); /work/vetto. Role updated in
   experience.ts too: "Full-Stack Engineer, LLM Evals" at "Vetto AI (Expert Crowd)".
