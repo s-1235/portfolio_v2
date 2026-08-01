@@ -9,6 +9,13 @@ export type Post = {
  *  app/writing/<slug>/page.mdx. */
 export const posts: Post[] = [
   {
+    slug: "how-frontier-ai-benchmarks-get-built",
+    title: "How frontier AI benchmarks actually get built",
+    date: "2026-08-01",
+    summary:
+      "What I have learned building benchmark tasks and eval tooling, and how the same craft shows up in the public record from OpenAI, METR, and Epoch AI.",
+  },
+  {
     slug: "rebuilding-my-portfolio-for-the-ai-era",
     title: "Rebuilding my portfolio for the AI era",
     date: "2026-07-29",

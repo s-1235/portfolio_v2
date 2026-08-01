@@ -1,0 +1,106 @@
+import PostLayout from "@/components/writing/PostLayout";
+
+export const metadata = {
+  title: "How frontier AI benchmarks actually get built",
+  description:
+    "What I have learned building benchmark tasks and eval tooling, and what the public record from OpenAI, METR, and Epoch AI says about the same craft.",
+};
+
+<PostLayout
+  title="How frontier AI benchmarks actually get built"
+  date="2026-08-01"
+>
+
+My day job is building benchmark tasks and the platform that contributors use
+to author them. Two years ago almost nobody had this job. Now every frontier
+lab is spending serious money on it, because the public benchmarks they used
+to rely on are wearing out. This post is about the craft: what I do all day,
+and how the same rules show up in the public record from OpenAI, METR, and
+Epoch AI.
+
+## Benchmarks are consumables
+
+A benchmark is not a permanent measuring stick. Models train on the internet,
+the benchmark leaks into the training data, and the score stops meaning
+anything. OpenAI [retired SWE-bench Verified](https://www.latent.space/p/swe-bench-dead)
+after frontier models clustered around 80 percent and their own chain of
+thought showed models recalling specific test arguments from task IDs alone.
+That is memorization, not capability. Projects like
+[LiveBench](https://arxiv.org/abs/2406.19314) exist purely to fight this,
+releasing fresh questions on a schedule so there is nothing old to memorize.
+
+So labs keep needing new tasks, harder tasks, and cleaner tasks. That demand
+is the reason my field exists.
+
+## Writing a good task is harder than solving it
+
+The most instructive number I know comes from OpenAI's
+[SWE-bench Verified project](https://openai.com/index/introducing-swe-bench-verified/).
+They paid 93 experienced Python developers to review 1,699 tasks from the
+original benchmark. The reviewers threw out about 68 percent of them.
+Underspecified issue descriptions, unit tests that rejected perfectly valid
+solutions, tasks that were not solvable from the information given. Two thirds
+of a famous, widely cited benchmark did not survive contact with careful
+human review.
+
+That matches my experience exactly. When a contributor drafts a task on our
+platform, the first version is almost never benchmark grade. The instructions
+hint at the solution, or the tests are too narrow, or the task is impossible
+for a reason the author did not notice. The whole point of the tooling I
+build is to catch those problems before a lab ever sees the task.
+
+## The rules of the craft
+
+Across every serious eval effort I know of, the same rules keep appearing.
+
+**Every task needs an oracle.** A task without a machine-checkable answer is
+an opinion. Epoch AI's [FrontierMath](https://epoch.ai/frontiermath/tiers-1-4/about)
+pays research mathematicians to write problems that take experts hours to
+weeks, and every problem ships with a verifier program that checks the answer
+automatically. On our platform the system generates oracle files and test
+cases when the task is created, and the tests run inside a sandbox the agent
+cannot escape or bypass.
+
+**Prove it is solvable.** [METR](https://metr.org/blog/2024-02-29-metr-task-standard/)
+runs human baseliners, engineers paid 50 to 100 dollars an hour, through the
+exact same task environment the agent gets, over SSH. If a qualified human
+cannot complete the task, the task is broken, not the model. We do the
+equivalent with repeated model runs: a task nothing can pass is telling you
+about the task, not the models.
+
+**Calibrate the difficulty.** A task that top models pass 100 percent of the
+time is too weak to teach anyone anything. A task nothing passes is probably
+defective. [Humanity's Last Exam](https://scale.com/blog/humanitys-last-exam)
+made this a hard gate: your question had to stump several frontier models
+before a human reviewer would even look at it. Over 70,000 submissions were
+filtered down to roughly 13,000 that cleared the models, and about 2,500
+survived expert review. In my work the target band is similar in spirit: a
+good task is one that strong models pass maybe 30 to 40 percent of the time.
+Reaching that band takes several rounds of adding real reasoning difficulty,
+not trick wording.
+
+**Read the transcripts.** Scores tell you almost nothing about why a run
+failed or succeeded. You run the model against the task several times and
+read the logs. Sometimes the model is cheating in a way the tests do not
+catch. Sometimes your instructions leaked the answer. Sometimes the model
+found a legitimate second solution your tests wrongly reject, which is
+exactly the failure OpenAI found in the SWE-bench tasks it retired.
+
+## The economics are real
+
+Expert judgment is the bottleneck, and the market prices it that way.
+Humanity's Last Exam paid a 500,000 dollar prize pool, with 5,000 dollars for
+each of the top questions. Expert marketplaces like
+[Mercor](https://www.mercor.com/resources/experts/ai-trainer-salary-hourly-rates/)
+route software engineers, doctors, and lawyers into eval work at 100 dollars
+an hour and up. Labs pay this because a well built benchmark is one of the
+few instruments that shows where a frontier model actually breaks: where it
+assumes instead of reading, hallucinates instead of checking, and gives up
+instead of exploring.
+
+That is also why I think of this as an engineering discipline and not
+annotation work. The deliverable is not a label. It is a reproducible,
+sandboxed, verified piece of software that a model has to fight with, plus
+the evidence trail that proves the fight was fair.
+
+</PostLayout>
