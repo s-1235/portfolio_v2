@@ -311,7 +311,7 @@ export const projects: Project[] = [
     tagline: "Bookings, staff, and client data in one place.",
     tags: "SaaS · Scheduling",
     category: ["ai", "full-stack"],
-    period: "Aug 2022 to Sep 2023",
+    period: "2023",
     role: "Full-Stack Developer",
     summary:
       "Platform for service businesses that manage bookings, staff, and client data in one place, with centralized scheduling logic that stays consistent even under simultaneous bookings.",
