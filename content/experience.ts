@@ -14,6 +14,7 @@ export const experience: Experience[] = [
       "Built the Coding Arena platform (Next.js, Django, agentic pipelines): guided task creation with auto-generated oracles and test cases, sandboxed multi-model runs, and VS Code integration with pass rates and budget tracking",
       "Created LLM eval tasks and the AI benchmark engineering handbook",
       "Supported 300+ contributors building frontier AI benchmarks",
+      "Identified critical platform bugs and infrastructure issues and proposed improvements that were adopted",
     ],
   },
   {
