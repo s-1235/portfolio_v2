@@ -237,9 +237,23 @@ export const projects: Project[] = [
       "AWS Lambda",
     ],
     links: [],
-    visualsPending: true,
-    assetsDir: "",
-    images: [],
+    assetsDir: "content-assets/medical",
+    images: [
+      {
+        src: "/projects/medical/architecture.png",
+        alt: "Medical Imaging AI system architecture diagram",
+        caption: "System architecture. The product interface is not public, so this diagram shows how the platform fits together.",
+        width: 1920,
+        height: 820,
+      },
+      {
+        src: "/projects/medical/medgemma.png",
+        alt: "MedGemma model card on Hugging Face",
+        caption: "MedGemma, the open medical model the platform fine-tunes",
+        width: 1920,
+        height: 1200,
+      },
+    ],
     featured: 4,
   },
   {
