@@ -134,8 +134,13 @@ Work top to bottom; each step has its own verification. Mark [x] as steps comple
       - sitescripter/: sitescripter.co hero+full (dark theme, purple gradient,
         'Unprecedented Web AI') + Chrome Web Store listing (webstore.png)
       - podding/: done earlier (see NDA note)
-      - Medical Imaging AI Platform: NO public URL known — need link or images from
-        Sadam (or mark case study as visuals-pending)
+      - Medical Imaging AI Platform: RESOLVED 2026-08-03 — no public URL exists, so
+        case study now shows: (1) honest architecture diagram rendered from site
+        tokens (scratchpad med-arch.html template, clearly captioned as a diagram),
+        (2) MedGemma model card capture from Hugging Face, captioned as the open
+        base model. visualsPending flag removed. NOTE: Sadam asked to use another
+        company's similar app screenshots as stand-ins — DECLINED (misrepresentation
+        + reverse-image-search risk); real product shots from Sadam still welcome.
       All captures visually verified; no blank frames. Machine DNS is flaky —
       Playwright goto sometimes needs retries (ERR_NAME_NOT_RESOLVED, transient).
 
