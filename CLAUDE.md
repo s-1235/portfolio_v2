@@ -289,7 +289,13 @@ Work top to bottom; each step has its own verification. Mark [x] as steps comple
   rotation): ROOT CAUSE was perspective, near-side nodes project larger and
   bulge past the frustum sides. Fix: long lens (fov 22, camera z 9) plus
   tighter radius jitter (1.08+0.14, was 1.05+0.25). Verified complete stable
-  silhouette across rotation frames and both pointer extremes. KEEPER version.
+  silhouette across rotation frames and both pointer extremes.
+- v7 (2026-08-03, Sadam: chords ugly + movement invisible + strings on ALL
+  edges): interior hub-to-hub chord lines REMOVED; mesh now 3-nearest-neighbor
+  (fuller, rounder); EVERY surface edge carries a visible purple pulse (0.04,
+  opacity .9, random direction per edge); hub-adjacent edges carry the icon
+  chips instead ({} ✓ ⇅); hubs stay as purple module anchors. Verified moving
+  pulses + stable silhouette across frames. FINAL KEEPER version.
 
 ### Playground v2 (2026-08-01, Sadam: scripted demo too weak)
 - AgentPipelineDemo (scripted) REPLACED by components/playground/
