@@ -16,15 +16,40 @@ function mulberry32(seed: number) {
   };
 }
 
-type PulseEdge = { a: THREE.Vector3; b: THREE.Vector3; phase: number };
+type PulseEdge = {
+  a: THREE.Vector3;
+  b: THREE.Vector3;
+  phase: number;
+  speed: number;
+};
 
-/** The original dense sphere mesh, with hub nodes and traveling pulses:
- *  one organism of agents, hubs communicating across it. */
+/** Icon sprite: purple rounded chip with a white glyph, for the data pulses. */
+function makeIconTexture(glyph: string) {
+  const size = 96;
+  const c = document.createElement("canvas");
+  c.width = size;
+  c.height = size;
+  const ctx = c.getContext("2d")!;
+  ctx.beginPath();
+  ctx.roundRect(6, 6, size - 12, size - 12, 26);
+  ctx.fillStyle = "#8000ff";
+  ctx.fill();
+  ctx.fillStyle = "#ffffff";
+  ctx.font = "600 44px Inter, system-ui, sans-serif";
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+  ctx.fillText(glyph, size / 2, size / 2 + 2);
+  const tex = new THREE.CanvasTexture(c);
+  tex.anisotropy = 2;
+  return tex;
+}
+
+/** Dense sphere mesh with hub nodes; pulses on every edge, iconed pulses on
+ *  the hub-to-hub workflow links. */
 function buildGraph() {
   const rng = mulberry32(7);
   const n = 96;
   const pts: THREE.Vector3[] = [];
-  // Fibonacci sphere with radius jitter, so it reads organic, not CAD.
   const golden = Math.PI * (3 - Math.sqrt(5));
   for (let i = 0; i < n; i++) {
     const y = 1 - (i / (n - 1)) * 2;
@@ -40,7 +65,6 @@ function buildGraph() {
     );
   }
 
-  // Hubs: 6 nodes spread evenly through the index range (even spherical spread).
   const hubIdx: number[] = [];
   for (let k = 0; k < 6; k++) hubIdx.push(Math.floor((k + 0.5) * (n / 6)));
   const hubSet = new Set(hubIdx);
@@ -51,8 +75,11 @@ function buildGraph() {
     (hubSet.has(i) ? hubArr : base).push(p.x, p.y, p.z);
   });
 
-  // The original mesh: connect each node to its 2 nearest neighbours.
+  // Mesh: every node wired to its 2 nearest neighbours, deduped, with a
+  // small pulse riding every edge.
+  const seenMesh = new Set<string>();
   const lines: number[] = [];
+  const meshPulses: PulseEdge[] = [];
   pts.forEach((p, i) => {
     pts
       .map((q, j) => ({ j, d: p.distanceTo(q) }))
@@ -60,14 +87,24 @@ function buildGraph() {
       .sort((a, b) => a.d - b.d)
       .slice(0, 2)
       .forEach(({ j }) => {
-        lines.push(p.x, p.y, p.z, pts[j].x, pts[j].y, pts[j].z);
+        const key = [Math.min(i, j), Math.max(i, j)].join("-");
+        if (seenMesh.has(key)) return;
+        seenMesh.add(key);
+        const q = pts[j];
+        lines.push(p.x, p.y, p.z, q.x, q.y, q.z);
+        meshPulses.push({
+          a: p.clone(),
+          b: q.clone(),
+          phase: rng(),
+          speed: 0.05 + rng() * 0.06,
+        });
       });
   });
 
-  // Communication layer: hubs wired as a ring plus cross-links, with pulses.
+  // Communication layer: hubs in a ring plus cross-links.
   const seen = new Set<string>();
   const inter: number[] = [];
-  const pulses: PulseEdge[] = [];
+  const hubPulses: PulseEdge[] = [];
   const addEdge = (i: number, j: number) => {
     const key = [Math.min(i, j), Math.max(i, j)].join("-");
     if (seen.has(key)) return;
@@ -75,28 +112,68 @@ function buildGraph() {
     const h = pts[hubIdx[i]];
     const q = pts[hubIdx[j]];
     inter.push(h.x, h.y, h.z, q.x, q.y, q.z);
-    pulses.push({ a: h.clone(), b: q.clone(), phase: rng() });
+    hubPulses.push({
+      a: h.clone(),
+      b: q.clone(),
+      phase: rng(),
+      speed: 0.1 + rng() * 0.05,
+    });
   };
   for (let i = 0; i < hubIdx.length; i++) addEdge(i, (i + 1) % hubIdx.length);
-  for (let i = 0; i < hubIdx.length; i += 2) addEdge(i, (i + 3) % hubIdx.length);
+  for (let i = 0; i < hubIdx.length; i += 2)
+    addEdge(i, (i + 3) % hubIdx.length);
 
   return {
     base: new Float32Array(base),
     hubs: new Float32Array(hubArr),
-    intra: new Float32Array(lines),
+    lines: new Float32Array(lines),
     inter: new Float32Array(inter),
-    pulses,
+    meshPulses,
+    hubPulses,
   };
+}
+
+function advance(
+  edges: PulseEdge[],
+  buf: Float32Array,
+  t: number,
+  reduce: boolean,
+  stride = 1,
+  offset = 0,
+) {
+  let w = 0;
+  for (let i = offset; i < edges.length; i += stride) {
+    const e = edges[i];
+    const u = reduce ? e.phase : (t * e.speed + e.phase) % 1;
+    buf[w * 3] = e.a.x + (e.b.x - e.a.x) * u;
+    buf[w * 3 + 1] = e.a.y + (e.b.y - e.a.y) * u;
+    buf[w * 3 + 2] = e.a.z + (e.b.z - e.a.z) * u;
+    w++;
+  }
 }
 
 function Graph({ reduce }: { reduce: boolean }) {
   const group = useRef<THREE.Group>(null);
-  const pulseAttr = useRef<THREE.BufferAttribute>(null);
+  const meshAttr = useRef<THREE.BufferAttribute>(null);
+  const iconAttrs = useRef<(THREE.BufferAttribute | null)[]>([
+    null,
+    null,
+    null,
+  ]);
   const pointer = useRef({ x: 0, y: 0 });
   const time = useRef(0);
   const g = useMemo(() => buildGraph(), []);
-  const pulsePositions = useMemo(
-    () => new Float32Array(g.pulses.length * 3),
+  const icons = useMemo(
+    () => [makeIconTexture("{}"), makeIconTexture("✓"), makeIconTexture("⇅")],
+    [],
+  );
+
+  const meshBuf = useMemo(() => new Float32Array(g.meshPulses.length * 3), [g]);
+  const iconBufs = useMemo(
+    () =>
+      [0, 1, 2].map(
+        (k) => new Float32Array(Math.ceil((g.hubPulses.length - k) / 3) * 3),
+      ),
     [g],
   );
 
@@ -118,14 +195,13 @@ function Graph({ reduce }: { reduce: boolean }) {
       gr.rotation.z += (pointer.current.x * 0.12 - gr.rotation.z) * 0.03;
       time.current += dt;
     }
-    // Pulses travel hub to hub along the workflow edges.
-    g.pulses.forEach((e, i) => {
-      const u = reduce ? e.phase : (time.current * 0.12 + e.phase) % 1;
-      pulsePositions[i * 3] = e.a.x + (e.b.x - e.a.x) * u;
-      pulsePositions[i * 3 + 1] = e.a.y + (e.b.y - e.a.y) * u;
-      pulsePositions[i * 3 + 2] = e.a.z + (e.b.z - e.a.z) * u;
-    });
-    if (pulseAttr.current) pulseAttr.current.needsUpdate = true;
+    advance(g.meshPulses, meshBuf, time.current, reduce);
+    if (meshAttr.current) meshAttr.current.needsUpdate = true;
+    for (let k = 0; k < 3; k++) {
+      advance(g.hubPulses, iconBufs[k], time.current, reduce, 3, k);
+      const attr = iconAttrs.current[k];
+      if (attr) attr.needsUpdate = true;
+    }
   });
 
   return (
@@ -134,36 +210,84 @@ function Graph({ reduce }: { reduce: boolean }) {
         <bufferGeometry>
           <bufferAttribute attach="attributes-position" args={[g.base, 3]} />
         </bufferGeometry>
-        <pointsMaterial color="#18181b" size={0.03} sizeAttenuation />
+        <pointsMaterial
+          color="#18181b"
+          size={0.03}
+          sizeAttenuation
+          depthWrite={false}
+        />
       </points>
       <points>
         <bufferGeometry>
           <bufferAttribute attach="attributes-position" args={[g.hubs, 3]} />
         </bufferGeometry>
-        <pointsMaterial color="#8000ff" size={0.075} sizeAttenuation />
+        <pointsMaterial
+          color="#8000ff"
+          size={0.075}
+          sizeAttenuation
+          depthWrite={false}
+        />
       </points>
       <lineSegments>
         <bufferGeometry>
-          <bufferAttribute attach="attributes-position" args={[g.intra, 3]} />
+          <bufferAttribute attach="attributes-position" args={[g.lines, 3]} />
         </bufferGeometry>
-        <lineBasicMaterial color="#c9c9ce" transparent opacity={0.4} />
+        <lineBasicMaterial
+          color="#b9b9bf"
+          transparent
+          opacity={0.5}
+          depthWrite={false}
+        />
       </lineSegments>
       <lineSegments>
         <bufferGeometry>
           <bufferAttribute attach="attributes-position" args={[g.inter, 3]} />
         </bufferGeometry>
-        <lineBasicMaterial color="#8000ff" transparent opacity={0.45} />
+        <lineBasicMaterial
+          color="#8000ff"
+          transparent
+          opacity={0.5}
+          depthWrite={false}
+        />
       </lineSegments>
       <points>
         <bufferGeometry>
           <bufferAttribute
-            ref={pulseAttr}
+            ref={meshAttr}
             attach="attributes-position"
-            args={[pulsePositions, 3]}
+            args={[meshBuf, 3]}
           />
         </bufferGeometry>
-        <pointsMaterial color="#8000ff" size={0.05} sizeAttenuation />
+        <pointsMaterial
+          color="#8000ff"
+          size={0.022}
+          sizeAttenuation
+          transparent
+          opacity={0.75}
+          depthWrite={false}
+        />
       </points>
+      {icons.map((tex, k) => (
+        <points key={k}>
+          <bufferGeometry>
+            <bufferAttribute
+              ref={(el: THREE.BufferAttribute | null) => {
+                iconAttrs.current[k] = el;
+              }}
+              attach="attributes-position"
+              args={[iconBufs[k], 3]}
+            />
+          </bufferGeometry>
+          <pointsMaterial
+            map={tex}
+            size={0.16}
+            sizeAttenuation
+            transparent
+            alphaTest={0.1}
+            depthWrite={false}
+          />
+        </points>
+      ))}
     </group>
   );
 }

@@ -274,7 +274,12 @@ Work top to bottom; each step has its own verification. Mark [x] as steps comple
 - v3 (2026-08-03, Sadam: v2 lost the v1 silhouette): geometry back to the v1
   dense fibonacci sphere (seed 7, identical shape), with 6 evenly-spread hub
   nodes + ring/cross purple hub links + traveling pulses layered ON the mesh.
-  Sphere look of v1, communication behavior of v2. This is the KEEPER version.
+  Sphere look of v1, communication behavior of v2.
+- v4 (2026-08-03, Sadam): line-vanishing during rotation fixed via
+  depthWrite:false on all transparent materials; small pulses now ride EVERY
+  mesh edge (per-edge phase+speed); hub pulses became icon chips (CanvasTexture
+  sprites, purple chip + white glyph): {} code tasks, ✓ eval results, ⇅ data
+  sync. This is the KEEPER version.
 
 ### Playground v2 (2026-08-01, Sadam: scripted demo too weak)
 - AgentPipelineDemo (scripted) REPLACED by components/playground/
