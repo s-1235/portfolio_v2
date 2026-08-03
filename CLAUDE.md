@@ -256,6 +256,16 @@ Work top to bottom; each step has its own verification. Mark [x] as steps comple
 - [x] 7.3 Content metrics cross-checked against Toptal record — all match. NDA
       compliance: Podding = marketing site + login + public metrics only ✓
 
+### 3D hero (2026-08-03, Sadam requested after research pass)
+- Research consensus (Awwwards 2025 winners, Utsubo 2026 roundup): one 3D idea,
+  hero-only, lazy-loaded, rest of page flat. Chosen option: subtle 3D hero object.
+- components/three/HeroGraph.tsx: R3F Canvas, seeded (mulberry32) fibonacci-sphere
+  node graph, 96 pts, 2-nearest-neighbor edges, ink points + purple accent nodes/
+  edges, slow rotation + pointer parallax; prefers-reduced-motion => static.
+- components/three/Hero3D.tsx: dynamic ssr:false + width>=1024 gate (mobile never
+  loads WebGL), aria-hidden, pointer-events-none, absolute right in hero Container.
+- Deps added: three, @react-three/fiber (+@types/three). Camera z=3.9, w-[36%].
+
 ### Playground v2 (2026-08-01, Sadam: scripted demo too weak)
 - AgentPipelineDemo (scripted) REPLACED by components/playground/
   OrchestratorDemo.tsx: a REAL engine in the browser. 8-node DAG (planner,

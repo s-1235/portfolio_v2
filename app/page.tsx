@@ -8,13 +8,15 @@ import { featuredProjects } from "@/content/projects";
 import { site } from "@/content/site";
 import ProjectCard from "@/components/work/ProjectCard";
 import ContactForm from "@/components/contact/ContactForm";
+import Hero3D from "@/components/three/Hero3D";
 
 export default function Home() {
   return (
     <>
       <SiteHeader />
       <main className="flex-1">
-        <Container className="pt-20 pb-24">
+        <Container className="relative pt-20 pb-24">
+          <Hero3D />
           <Reveal>
             <p className="mb-6 text-sm font-medium tracking-widest uppercase text-accent">
               {site.positioning}
