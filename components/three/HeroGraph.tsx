@@ -26,22 +26,22 @@ type PulseEdge = {
 
 /** Icon sprite: purple rounded chip with a white glyph, for the data pulses. */
 function makeIconTexture(glyph: string) {
-  const size = 96;
+  const size = 128;
   const c = document.createElement("canvas");
   c.width = size;
   c.height = size;
   const ctx = c.getContext("2d")!;
   ctx.beginPath();
-  ctx.roundRect(6, 6, size - 12, size - 12, 26);
+  ctx.roundRect(8, 8, size - 16, size - 16, 34);
   ctx.fillStyle = "#8000ff";
   ctx.fill();
   ctx.fillStyle = "#ffffff";
-  ctx.font = "600 44px Inter, system-ui, sans-serif";
+  ctx.font = "700 68px Inter, system-ui, sans-serif";
   ctx.textAlign = "center";
   ctx.textBaseline = "middle";
-  ctx.fillText(glyph, size / 2, size / 2 + 2);
+  ctx.fillText(glyph, size / 2, size / 2 + 3);
   const tex = new THREE.CanvasTexture(c);
-  tex.anisotropy = 2;
+  tex.anisotropy = 4;
   return tex;
 }
 
@@ -253,7 +253,7 @@ function Graph({ reduce }: { reduce: boolean }) {
           </bufferGeometry>
           <pointsMaterial
             map={tex}
-            size={0.2}
+            size={0.3}
             sizeAttenuation
             transparent
             alphaTest={0.1}
