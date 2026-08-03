@@ -233,7 +233,7 @@ function Graph({ reduce }: { reduce: boolean }) {
         </bufferGeometry>
         <pointsMaterial
           color="#8000ff"
-          size={0.04}
+          size={0.05}
           sizeAttenuation
           transparent
           opacity={0.9}
@@ -253,7 +253,7 @@ function Graph({ reduce }: { reduce: boolean }) {
           </bufferGeometry>
           <pointsMaterial
             map={tex}
-            size={0.13}
+            size={0.2}
             sizeAttenuation
             transparent
             alphaTest={0.1}
