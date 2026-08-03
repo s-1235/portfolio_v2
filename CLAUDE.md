@@ -265,6 +265,12 @@ Work top to bottom; each step has its own verification. Mark [x] as steps comple
 - components/three/Hero3D.tsx: dynamic ssr:false + width>=1024 gate (mobile never
   loads WebGL), aria-hidden, pointer-events-none, absolute right in hero Container.
 - Deps added: three, @react-three/fiber (+@types/three). Camera z=3.9, w-[36%].
+- v2 (same day, Sadam: "make it look like AI agents and workflows of organizations
+  connected"): geometry now 6 clusters (9-13 agent nodes each around a purple hub,
+  gray spokes to hub + peer links), hubs wired as ring + cross-links (guaranteed
+  single connected network; 2-nearest wiring made disconnected islands), purple
+  pulse dots travel hub-to-hub (static under reduced motion). Slight headline
+  contact approved by Sadam.
 
 ### Playground v2 (2026-08-01, Sadam: scripted demo too weak)
 - AgentPipelineDemo (scripted) REPLACED by components/playground/
