@@ -55,7 +55,7 @@ function buildGraph() {
     const y = 1 - (i / (n - 1)) * 2;
     const r = Math.sqrt(1 - y * y);
     const theta = golden * i;
-    const jitter = 1.05 + rng() * 0.25;
+    const jitter = 1.08 + rng() * 0.14;
     pts.push(
       new THREE.Vector3(
         Math.cos(theta) * r * jitter,
@@ -305,7 +305,7 @@ export default function HeroGraph() {
   return (
     <Canvas
       dpr={[1, 1.5]}
-      camera={{ position: [0, 0, 4.2], fov: 40 }}
+      camera={{ position: [0, 0, 9], fov: 22 }}
       gl={{ antialias: true, alpha: true }}
     >
       <Graph reduce={reduce} />

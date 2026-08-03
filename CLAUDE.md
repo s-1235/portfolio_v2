@@ -284,7 +284,12 @@ Work top to bottom; each step has its own verification. Mark [x] as steps comple
   clipping fixed earlier via square canvas (500x540, camera z 4.2); mobile/tablet
   gate REMOVED — under lg the graph renders as a centered in-flow ornament
   (h-300px, max-w-320px) above the hero text, fully contained. Verified canvas +
-  no overflow at 1440/768/390. This is the KEEPER version.
+  no overflow at 1440/768/390.
+- v6 (2026-08-03, Sadam: bottom-corner clipping + inconsistent shape during
+  rotation): ROOT CAUSE was perspective, near-side nodes project larger and
+  bulge past the frustum sides. Fix: long lens (fov 22, camera z 9) plus
+  tighter radius jitter (1.08+0.14, was 1.05+0.25). Verified complete stable
+  silhouette across rotation frames and both pointer extremes. KEEPER version.
 
 ### Playground v2 (2026-08-01, Sadam: scripted demo too weak)
 - AgentPipelineDemo (scripted) REPLACED by components/playground/
