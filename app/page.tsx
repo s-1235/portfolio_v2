@@ -21,7 +21,7 @@ export default function Home() {
             <p className="mb-6 text-sm font-medium tracking-widest uppercase text-accent">
               {site.positioning}
             </p>
-            <h1 className="font-display max-w-3xl text-5xl leading-[1.05] tracking-tight sm:text-6xl">
+            <h1 className="font-display max-w-3xl text-5xl leading-[1.05] tracking-tight sm:text-6xl lg:max-w-[32rem]">
               {site.heroHeading}
             </h1>
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted">

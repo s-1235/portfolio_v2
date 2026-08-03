@@ -21,7 +21,7 @@ export default function Hero3D() {
     return (
       <div
         aria-hidden
-        className="pointer-events-none absolute right-0 top-1/2 h-[540px] w-[500px] -translate-y-1/2"
+        className="pointer-events-none absolute right-0 top-1/2 h-[460px] w-[420px] -translate-y-1/2"
       >
         <HeroGraph />
       </div>

@@ -295,7 +295,10 @@ Work top to bottom; each step has its own verification. Mark [x] as steps comple
   (fuller, rounder); EVERY surface edge carries a visible purple pulse (0.04,
   opacity .9, random direction per edge); hub-adjacent edges carry the icon
   chips instead ({} ✓ ⇅); hubs stay as purple module anchors. Verified moving
-  pulses + stable silhouette across frames. FINAL KEEPER version.
+  pulses + stable silhouette across frames.
+- v8 (2026-08-04, Sadam: headline/sphere overlap now unwanted): headline gets
+  lg:max-w-[32rem] (wraps to 2 lines), sphere canvas 420x460. Measured 68px
+  gap between headline and canvas at 1440/1280/1050. FINAL KEEPER version.
 
 ### Playground v2 (2026-08-01, Sadam: scripted demo too weak)
 - AgentPipelineDemo (scripted) REPLACED by components/playground/
