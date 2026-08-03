@@ -5,21 +5,32 @@ import { useEffect, useState } from "react";
 
 const HeroGraph = dynamic(() => import("./HeroGraph"), { ssr: false });
 
-/** Desktop-only, lazy-loaded 3D hero ornament. Renders nothing below lg
- *  so phones never pay the WebGL cost. */
+/** The hero graph, visible to every visitor. Desktop gets the floating
+ *  placement beside the headline; smaller screens get a fully-contained
+ *  centered ornament above the text so no part of it is ever cut off. */
 export default function Hero3D() {
-  const [show, setShow] = useState(false);
+  const [wide, setWide] = useState<boolean | null>(null);
   useEffect(() => {
-    const check = () => setShow(window.innerWidth >= 1024);
+    const check = () => setWide(window.innerWidth >= 1024);
     check();
     window.addEventListener("resize", check);
     return () => window.removeEventListener("resize", check);
   }, []);
-  if (!show) return null;
+  if (wide === null) return null;
+  if (wide) {
+    return (
+      <div
+        aria-hidden
+        className="pointer-events-none absolute right-0 top-1/2 h-[540px] w-[500px] -translate-y-1/2"
+      >
+        <HeroGraph />
+      </div>
+    );
+  }
   return (
     <div
       aria-hidden
-      className="pointer-events-none absolute right-0 top-1/2 hidden h-[540px] w-[500px] -translate-y-1/2 lg:block"
+      className="pointer-events-none mx-auto mb-4 h-[300px] w-full max-w-[320px]"
     >
       <HeroGraph />
     </div>
