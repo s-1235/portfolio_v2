@@ -18,54 +18,53 @@ function mulberry32(seed: number) {
 
 type PulseEdge = { a: THREE.Vector3; b: THREE.Vector3; phase: number };
 
-/** Clusters of agent nodes around purple hubs, hubs wired to each other:
- *  organizations of agents connected by workflows. */
+/** The original dense sphere mesh, with hub nodes and traveling pulses:
+ *  one organism of agents, hubs communicating across it. */
 function buildGraph() {
-  const rng = mulberry32(11);
-  const K = 6;
+  const rng = mulberry32(7);
+  const n = 96;
+  const pts: THREE.Vector3[] = [];
+  // Fibonacci sphere with radius jitter, so it reads organic, not CAD.
   const golden = Math.PI * (3 - Math.sqrt(5));
-
-  const hubs: THREE.Vector3[] = [];
-  for (let i = 0; i < K; i++) {
-    const y = 1 - (i / (K - 1)) * 2;
-    const r = Math.sqrt(Math.max(0, 1 - y * y));
-    const theta = golden * i * 2.0 + 0.6;
-    const scale = 0.95 + rng() * 0.2;
-    hubs.push(
+  for (let i = 0; i < n; i++) {
+    const y = 1 - (i / (n - 1)) * 2;
+    const r = Math.sqrt(1 - y * y);
+    const theta = golden * i;
+    const jitter = 1.05 + rng() * 0.25;
+    pts.push(
       new THREE.Vector3(
-        Math.cos(theta) * r * scale,
-        y * scale,
-        Math.sin(theta) * r * scale,
+        Math.cos(theta) * r * jitter,
+        y * jitter,
+        Math.sin(theta) * r * jitter,
       ),
     );
   }
 
+  // Hubs: 6 nodes spread evenly through the index range (even spherical spread).
+  const hubIdx: number[] = [];
+  for (let k = 0; k < 6; k++) hubIdx.push(Math.floor((k + 0.5) * (n / 6)));
+  const hubSet = new Set(hubIdx);
+
   const base: number[] = [];
-  const intra: number[] = [];
-  hubs.forEach((hub) => {
-    const m = 9 + Math.floor(rng() * 5);
-    const members: THREE.Vector3[] = [];
-    for (let j = 0; j < m; j++) {
-      const dir = new THREE.Vector3(
-        rng() - 0.5,
-        rng() - 0.5,
-        rng() - 0.5,
-      ).normalize();
-      const p = hub.clone().add(dir.multiplyScalar(0.12 + rng() * 0.26));
-      members.push(p);
-      base.push(p.x, p.y, p.z);
-      // every agent reports to its hub
-      intra.push(p.x, p.y, p.z, hub.x, hub.y, hub.z);
-    }
-    // a few peer links inside the cluster
-    for (let j = 0; j < members.length; j += 3) {
-      const q = members[(j + 1) % members.length];
-      intra.push(members[j].x, members[j].y, members[j].z, q.x, q.y, q.z);
-    }
+  const hubArr: number[] = [];
+  pts.forEach((p, i) => {
+    (hubSet.has(i) ? hubArr : base).push(p.x, p.y, p.z);
   });
 
-  // Org-to-org workflows: a ring through all hubs guarantees one connected
-  // network, plus one cross-link per hub for redundancy.
+  // The original mesh: connect each node to its 2 nearest neighbours.
+  const lines: number[] = [];
+  pts.forEach((p, i) => {
+    pts
+      .map((q, j) => ({ j, d: p.distanceTo(q) }))
+      .filter((e) => e.j !== i)
+      .sort((a, b) => a.d - b.d)
+      .slice(0, 2)
+      .forEach(({ j }) => {
+        lines.push(p.x, p.y, p.z, pts[j].x, pts[j].y, pts[j].z);
+      });
+  });
+
+  // Communication layer: hubs wired as a ring plus cross-links, with pulses.
   const seen = new Set<string>();
   const inter: number[] = [];
   const pulses: PulseEdge[] = [];
@@ -73,21 +72,18 @@ function buildGraph() {
     const key = [Math.min(i, j), Math.max(i, j)].join("-");
     if (seen.has(key)) return;
     seen.add(key);
-    const h = hubs[i];
-    const q = hubs[j];
+    const h = pts[hubIdx[i]];
+    const q = pts[hubIdx[j]];
     inter.push(h.x, h.y, h.z, q.x, q.y, q.z);
     pulses.push({ a: h.clone(), b: q.clone(), phase: rng() });
   };
-  for (let i = 0; i < K; i++) addEdge(i, (i + 1) % K);
-  for (let i = 0; i < K; i += 2) addEdge(i, (i + 3) % K);
-
-  const hubArr: number[] = [];
-  hubs.forEach((h) => hubArr.push(h.x, h.y, h.z));
+  for (let i = 0; i < hubIdx.length; i++) addEdge(i, (i + 1) % hubIdx.length);
+  for (let i = 0; i < hubIdx.length; i += 2) addEdge(i, (i + 3) % hubIdx.length);
 
   return {
     base: new Float32Array(base),
     hubs: new Float32Array(hubArr),
-    intra: new Float32Array(intra),
+    intra: new Float32Array(lines),
     inter: new Float32Array(inter),
     pulses,
   };

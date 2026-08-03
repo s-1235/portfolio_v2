@@ -271,6 +271,10 @@ Work top to bottom; each step has its own verification. Mark [x] as steps comple
   single connected network; 2-nearest wiring made disconnected islands), purple
   pulse dots travel hub-to-hub (static under reduced motion). Slight headline
   contact approved by Sadam.
+- v3 (2026-08-03, Sadam: v2 lost the v1 silhouette): geometry back to the v1
+  dense fibonacci sphere (seed 7, identical shape), with 6 evenly-spread hub
+  nodes + ring/cross purple hub links + traveling pulses layered ON the mesh.
+  Sphere look of v1, communication behavior of v2. This is the KEEPER version.
 
 ### Playground v2 (2026-08-01, Sadam: scripted demo too weak)
 - AgentPipelineDemo (scripted) REPLACED by components/playground/
