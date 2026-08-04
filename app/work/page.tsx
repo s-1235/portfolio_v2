@@ -19,7 +19,7 @@ export default function WorkPage() {
       <main className="flex-1">
         <Container className="pt-12 pb-16">
           <Reveal>
-            <p className="mb-6 font-mono text-xs font-medium tracking-widest uppercase text-accent">
+            <p className="mb-6 with-dot font-mono text-xs font-medium tracking-widest uppercase text-accent">
               Work
             </p>
             <h1 className="font-display max-w-2xl text-4xl leading-[1.1] tracking-tight sm:text-5xl">

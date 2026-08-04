@@ -13,7 +13,7 @@ export default function SiteFooter() {
               href={s.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="transition hover:text-ink"
+              className="link-sweep transition hover:text-ink"
             >
               {s.label}
             </a>

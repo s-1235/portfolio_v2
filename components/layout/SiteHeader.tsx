@@ -10,22 +10,22 @@ export default function SiteHeader() {
           Sadam Khan
         </Link>
         <nav className="flex items-center gap-2 text-xs sm:gap-8 sm:text-sm">
-          <Link href="/work" className="text-muted transition hover:text-ink">
+          <Link href="/work" className="link-sweep text-muted transition hover:text-ink">
             Work
           </Link>
           <Link
             href="/writing"
-            className="text-muted transition hover:text-ink"
+            className="link-sweep text-muted transition hover:text-ink"
           >
             Writing
           </Link>
           <Link
             href="/playground"
-            className="hidden text-muted transition hover:text-ink sm:inline"
+            className="link-sweep hidden text-muted transition hover:text-ink sm:inline"
           >
             Playground
           </Link>
-          <Link href="/about" className="text-muted transition hover:text-ink">
+          <Link href="/about" className="link-sweep text-muted transition hover:text-ink">
             About
           </Link>
           <Link

@@ -60,6 +60,7 @@ export default function RootLayout({
               "try{if(localStorage.getItem('theme')!=='light')document.documentElement.dataset.theme='dark'}catch(e){document.documentElement.dataset.theme='dark'}",
           }}
         />
+        <div aria-hidden className="grain" />
         {children}
         <Analytics />
       </body>

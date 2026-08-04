@@ -7,7 +7,7 @@ export default function ProjectCard({ project }: { project: Project }) {
   return (
     <Link href={`/work/${project.slug}`} className="group block min-w-0">
       {thumb ? (
-        <div className="overflow-hidden rounded-2xl border border-line bg-surface">
+        <div className="overflow-hidden rounded-2xl border border-line bg-surface transition duration-300 group-hover:border-muted">
           <Image
             src={thumb.src}
             alt={thumb.alt}
@@ -26,7 +26,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         <h3 className="font-display text-xl transition group-hover:text-accent">
           {project.name}
         </h3>
-        <p className="font-mono text-[11px] tracking-wider uppercase text-muted">
+        <p className="with-dot font-mono text-[11px] tracking-wider uppercase text-muted">
           {project.tags}
         </p>
       </div>

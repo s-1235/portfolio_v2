@@ -30,7 +30,7 @@ export default function AboutPage() {
               />
             </Reveal>
             <Reveal delay={0.05} className="max-w-2xl">
-              <p className="mb-4 font-mono text-xs font-medium tracking-widest uppercase text-accent">
+              <p className="mb-4 with-dot font-mono text-xs font-medium tracking-widest uppercase text-accent">
                 About
               </p>
               <h1 className="font-display text-4xl leading-[1.1] tracking-tight sm:text-5xl">

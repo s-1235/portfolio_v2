@@ -272,6 +272,14 @@ Work top to bottom; each step has its own verification. Mark [x] as steps comple
 - NOT adopted (offered, declined for now): metric-dense hero bio, career strip
   on home, bookshelf section (bookshelf needs Sadam's real book list).
 
+### Effects adopted from psychoactive.co.nz (2026-08-05, Sadam picked 2 of 4)
+- Film grain overlay: .grain fixed div (SVG feTurbulence data URI, steps()
+  jitter animation, reduced-motion static), opacity .035 light / .055 dark.
+- Micro-interactions: .with-dot accent bullet before mono eyebrows/card tags,
+  .link-sweep animated underline on header nav + footer socials, work card
+  image border lightens on hover (group-hover:border-muted).
+- NOT adopted: halftone placeholder tiles, keyword marquee (offered).
+
 ### 3D hero (2026-08-03, Sadam requested after research pass)
 - Research consensus (Awwwards 2025 winners, Utsubo 2026 roundup): one 3D idea,
   hero-only, lazy-loaded, rest of page flat. Chosen option: subtle 3D hero object.

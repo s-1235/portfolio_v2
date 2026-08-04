@@ -43,7 +43,7 @@ export default async function CaseStudy({
       <main className="flex-1">
         <Container className="pt-12 pb-16">
           <Reveal>
-            <p className="mb-6 font-mono text-xs font-medium tracking-widest uppercase text-accent">
+            <p className="mb-6 with-dot font-mono text-xs font-medium tracking-widest uppercase text-accent">
               {project.tags}
             </p>
             <h1 className="font-display max-w-3xl text-4xl leading-[1.05] tracking-tight sm:text-6xl">
