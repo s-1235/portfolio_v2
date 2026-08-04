@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { site, siteUrl } from "@/content/site";
 import "./globals.css";
@@ -12,6 +12,11 @@ const fraunces = Fraunces({
 
 const inter = Inter({
   variable: "--font-inter",
+  subsets: ["latin"],
+});
+
+const jbmono = JetBrains_Mono({
+  variable: "--font-jbmono",
   subsets: ["latin"],
 });
 
@@ -46,7 +51,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fraunces.variable} ${inter.variable} h-full antialiased`}
+      className={`${fraunces.variable} ${inter.variable} ${jbmono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <script

@@ -27,7 +27,7 @@ export default function PlaygroundPage() {
       <main className="flex-1">
         <Container className="pt-12 pb-20">
           <Reveal>
-            <p className="mb-6 text-sm font-medium tracking-widest uppercase text-accent">
+            <p className="mb-6 font-mono text-xs font-medium tracking-widest uppercase text-accent">
               Playground
             </p>
             <h1 className="font-display max-w-2xl text-4xl leading-[1.1] tracking-tight sm:text-5xl">
@@ -38,7 +38,7 @@ export default function PlaygroundPage() {
             {demos.map((demo, i) => (
               <Reveal key={demo.slug} delay={i * 0.04}>
                 <article className="border-t border-line pt-8">
-                  <p className="text-sm text-muted">{fmt(demo.date)}</p>
+                  <p className="font-mono text-xs text-muted">{fmt(demo.date)}</p>
                   <h2 className="font-display mt-2 text-2xl">
                     <Link
                       href={`/playground/${demo.slug}`}

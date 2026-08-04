@@ -25,7 +25,7 @@ export default function PostLayout({
       <SiteHeader />
       <main className="flex-1">
         <Container className="pt-12 pb-20">
-          <p className="text-sm text-muted">{fmt(date)}</p>
+          <p className="font-mono text-xs text-muted">{fmt(date)}</p>
           <h1 className="font-display mt-2 mb-10 max-w-2xl text-4xl leading-[1.1] tracking-tight sm:text-5xl">
             {title}
           </h1>

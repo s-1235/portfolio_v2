@@ -18,7 +18,7 @@ export default function Home() {
         <Container className="relative pt-20 pb-24">
           <Hero3D />
           <Reveal>
-            <p className="mb-6 text-sm font-medium tracking-widest uppercase text-accent">
+            <p className="mb-6 font-mono text-xs font-medium tracking-widest uppercase text-accent">
               {site.positioning}
             </p>
             <h1 className="font-display max-w-3xl text-5xl leading-[1.05] tracking-tight sm:text-6xl lg:max-w-[32rem]">

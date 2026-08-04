@@ -43,7 +43,7 @@ export default async function CaseStudy({
       <main className="flex-1">
         <Container className="pt-12 pb-16">
           <Reveal>
-            <p className="mb-6 text-sm font-medium tracking-widest uppercase text-accent">
+            <p className="mb-6 font-mono text-xs font-medium tracking-widest uppercase text-accent">
               {project.tags}
             </p>
             <h1 className="font-display max-w-3xl text-4xl leading-[1.05] tracking-tight sm:text-6xl">
@@ -54,16 +54,16 @@ export default async function CaseStudy({
             </p>
             <dl className="mt-8 flex flex-wrap gap-x-12 gap-y-4 text-sm">
               <div>
-                <dt className="text-muted">Role</dt>
+                <dt className="font-mono text-xs uppercase tracking-wider text-muted">Role</dt>
                 <dd className="mt-1 font-medium">{project.role}</dd>
               </div>
               <div>
-                <dt className="text-muted">Period</dt>
+                <dt className="font-mono text-xs uppercase tracking-wider text-muted">Period</dt>
                 <dd className="mt-1 font-medium">{project.period}</dd>
               </div>
               {project.links.length > 0 && (
                 <div>
-                  <dt className="text-muted">Links</dt>
+                  <dt className="font-mono text-xs uppercase tracking-wider text-muted">Links</dt>
                   <dd className="mt-1 space-x-4">
                     {project.links.map((l) => (
                       <a
@@ -157,7 +157,7 @@ export default async function CaseStudy({
                     className="rounded-2xl border border-line"
                   />
                   {img.caption && (
-                    <figcaption className="mt-3 text-sm text-muted">
+                    <figcaption className="mt-3 font-mono text-xs text-muted">
                       {img.caption}
                     </figcaption>
                   )}

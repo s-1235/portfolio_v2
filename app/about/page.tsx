@@ -30,7 +30,7 @@ export default function AboutPage() {
               />
             </Reveal>
             <Reveal delay={0.05} className="max-w-2xl">
-              <p className="mb-4 text-sm font-medium tracking-widest uppercase text-accent">
+              <p className="mb-4 font-mono text-xs font-medium tracking-widest uppercase text-accent">
                 About
               </p>
               <h1 className="font-display text-4xl leading-[1.1] tracking-tight sm:text-5xl">
@@ -64,7 +64,7 @@ export default function AboutPage() {
                 <Reveal key={e.company} delay={i * 0.03}>
                   <li className="relative">
                     <span className="absolute -left-[37px] top-2 h-2 w-2 rounded-full bg-accent" />
-                    <p className="text-sm text-muted">{e.period}</p>
+                    <p className="font-mono text-xs text-muted">{e.period}</p>
                     <h3 className="font-display mt-1 text-xl">
                       {e.role}, {e.company}
                     </h3>

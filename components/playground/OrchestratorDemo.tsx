@@ -246,7 +246,7 @@ export default function OrchestratorDemo() {
     <div className="rounded-2xl border border-line bg-surface p-6 sm:p-8">
       <div className="mb-6 grid gap-4 sm:grid-cols-5">
         <label className="block text-sm">
-          <span className="mb-1 block text-xs tracking-widest uppercase text-muted">
+          <span className="mb-1 block font-mono text-[11px] tracking-wider uppercase text-muted">
             Concurrency
           </span>
           <select
@@ -263,7 +263,7 @@ export default function OrchestratorDemo() {
           </select>
         </label>
         <label className="block text-sm">
-          <span className="mb-1 block text-xs tracking-widest uppercase text-muted">
+          <span className="mb-1 block font-mono text-[11px] tracking-wider uppercase text-muted">
             Tool failure {failPct}%
           </span>
           <input
@@ -278,7 +278,7 @@ export default function OrchestratorDemo() {
           />
         </label>
         <label className="block text-sm">
-          <span className="mb-1 block text-xs tracking-widest uppercase text-muted">
+          <span className="mb-1 block font-mono text-[11px] tracking-wider uppercase text-muted">
             Max retries
           </span>
           <select
@@ -295,7 +295,7 @@ export default function OrchestratorDemo() {
           </select>
         </label>
         <label className="block text-sm">
-          <span className="mb-1 block text-xs tracking-widest uppercase text-muted">
+          <span className="mb-1 block font-mono text-[11px] tracking-wider uppercase text-muted">
             Token budget
           </span>
           <select
@@ -310,7 +310,7 @@ export default function OrchestratorDemo() {
           </select>
         </label>
         <label className="block text-sm">
-          <span className="mb-1 block text-xs tracking-widest uppercase text-muted">
+          <span className="mb-1 block font-mono text-[11px] tracking-wider uppercase text-muted">
             Seed
           </span>
           <input
@@ -339,7 +339,7 @@ export default function OrchestratorDemo() {
         >
           Reset
         </button>
-        <span className="ml-auto text-xs tracking-widest uppercase text-muted">
+        <span className="ml-auto font-mono text-[11px] tracking-wider uppercase text-muted">
           Real engine · reproducible by seed
         </span>
       </div>
@@ -381,13 +381,13 @@ export default function OrchestratorDemo() {
       {metrics && (
         <div className="mt-6 grid gap-3 text-sm sm:grid-cols-4">
           <div className="rounded-xl border border-line bg-bg p-4">
-            <p className="text-xs tracking-widest uppercase text-muted">
+            <p className="font-mono text-[11px] tracking-wider uppercase text-muted">
               Wall time
             </p>
             <p className="mt-1 font-medium">{metrics.wallMs}ms</p>
           </div>
           <div className="rounded-xl border border-line bg-bg p-4">
-            <p className="text-xs tracking-widest uppercase text-muted">
+            <p className="font-mono text-[11px] tracking-wider uppercase text-muted">
               Attempts / retries
             </p>
             <p className="mt-1 font-medium">
@@ -395,7 +395,7 @@ export default function OrchestratorDemo() {
             </p>
           </div>
           <div className="rounded-xl border border-line bg-bg p-4">
-            <p className="text-xs tracking-widest uppercase text-muted">
+            <p className="font-mono text-[11px] tracking-wider uppercase text-muted">
               Tokens spent
             </p>
             <p className="mt-1 font-medium">
@@ -403,7 +403,7 @@ export default function OrchestratorDemo() {
             </p>
           </div>
           <div className="rounded-xl border border-line bg-bg p-4">
-            <p className="text-xs tracking-widest uppercase text-muted">
+            <p className="font-mono text-[11px] tracking-wider uppercase text-muted">
               Nodes
             </p>
             <p className="mt-1 font-medium">

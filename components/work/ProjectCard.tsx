@@ -26,7 +26,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         <h3 className="font-display text-xl transition group-hover:text-accent">
           {project.name}
         </h3>
-        <p className="text-xs tracking-widest uppercase text-muted">
+        <p className="font-mono text-[11px] tracking-wider uppercase text-muted">
           {project.tags}
         </p>
       </div>

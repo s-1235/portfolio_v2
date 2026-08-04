@@ -28,7 +28,7 @@ export default function WritingPage() {
       <main className="flex-1">
         <Container className="pt-12 pb-20">
           <Reveal>
-            <p className="mb-6 text-sm font-medium tracking-widest uppercase text-accent">
+            <p className="mb-6 font-mono text-xs font-medium tracking-widest uppercase text-accent">
               Writing
             </p>
             <h1 className="font-display max-w-2xl text-4xl leading-[1.1] tracking-tight sm:text-5xl">
@@ -39,7 +39,7 @@ export default function WritingPage() {
             {sorted.map((post, i) => (
               <Reveal key={post.slug} delay={i * 0.04}>
                 <article className="border-t border-line pt-8">
-                  <p className="text-sm text-muted">{fmt(post.date)}</p>
+                  <p className="font-mono text-xs text-muted">{fmt(post.date)}</p>
                   <h2 className="font-display mt-2 text-2xl">
                     <Link
                       href={`/writing/${post.slug}`}

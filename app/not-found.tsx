@@ -9,7 +9,7 @@ export default function NotFound() {
       <SiteHeader />
       <main className="flex-1">
         <Container className="py-32 text-center">
-          <p className="mb-4 text-sm font-medium tracking-widest uppercase text-accent">
+          <p className="mb-4 font-mono text-xs font-medium tracking-widest uppercase text-accent">
             404
           </p>
           <h1 className="font-display text-4xl sm:text-5xl">

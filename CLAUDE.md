@@ -264,8 +264,13 @@ Work top to bottom; each step has its own verification. Mark [x] as steps comple
   flex-wrap to avoid overflow (verified 390/360/320).
 - "How I can help" section on home (#services, before contact): 3 cards: AI
   product builds / LLM evals and benchmarks / Full stack engineering.
-- NOT adopted (offered, declined for now): metric-dense hero bio, bookshelf
-  section (bookshelf needs Sadam's real book list).
+- Dark mode made the DEFAULT (2026-08-05): boot script applies dark unless
+  localStorage theme==='light'. OG image still light-themed (offered regen).
+- Monospace accents (2026-08-05): JetBrains Mono via next/font (--font-jbmono →
+  --font-mono → font-mono utility). Applied to: eyebrows, card tags, dates,
+  figcaptions, case-study dt labels, timeline periods, demo knob labels.
+- NOT adopted (offered, declined for now): metric-dense hero bio, career strip
+  on home, bookshelf section (bookshelf needs Sadam's real book list).
 
 ### 3D hero (2026-08-03, Sadam requested after research pass)
 - Research consensus (Awwwards 2025 winners, Utsubo 2026 roundup): one 3D idea,
