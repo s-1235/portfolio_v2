@@ -67,8 +67,25 @@ function buildGraph() {
     );
   }
 
+  // One hub per latitude band, chosen so hub longitudes spread around the
+  // full circle: communication happens on every side of the sphere.
   const hubIdx: number[] = [];
-  for (let k = 0; k < 6; k++) hubIdx.push(Math.floor((k + 0.5) * (n / 6)));
+  const band = n / 6;
+  for (let k = 0; k < 6; k++) {
+    const target = (k * Math.PI * 2) / 6;
+    let best = Math.floor(k * band);
+    let bestD = Infinity;
+    for (let i = Math.floor(k * band); i < Math.floor((k + 1) * band); i++) {
+      const th = (i * golden) % (Math.PI * 2);
+      let d = Math.abs(th - target);
+      if (d > Math.PI) d = Math.PI * 2 - d;
+      if (d < bestD) {
+        bestD = d;
+        best = i;
+      }
+    }
+    hubIdx.push(best);
+  }
   const hubSet = new Set(hubIdx);
 
   const base: number[] = [];
@@ -95,14 +112,17 @@ function buildGraph() {
         seen.add(key);
         const q = pts[j];
         lines.push(p.x, p.y, p.z, q.x, q.y, q.z);
+        const isIconEdge = hubSet.has(i) || hubSet.has(j);
         const edge: PulseEdge = {
           a: p.clone(),
           b: q.clone(),
           phase: rng(),
-          speed: 0.08 + rng() * 0.08,
+          // Icon chips travel fast enough to visibly hop node to node;
+          // plain dots drift slower for a calmer texture.
+          speed: isIconEdge ? 0.13 + rng() * 0.07 : 0.08 + rng() * 0.08,
           dir: rng() > 0.5 ? 1 : -1,
         };
-        if (hubSet.has(i) || hubSet.has(j)) iconPulses.push(edge);
+        if (isIconEdge) iconPulses.push(edge);
         else meshPulses.push(edge);
       });
   });
