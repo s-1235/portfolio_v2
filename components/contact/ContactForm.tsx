@@ -85,7 +85,7 @@ export default function ContactForm() {
           className="w-full rounded-xl border border-line bg-surface px-4 py-3 text-sm outline-none transition focus:border-accent"
         />
       </label>
-      {status === "error" && <p className="text-sm text-red-600">{error}</p>}
+      {status === "error" && <p className="text-sm text-red-600 dark:text-red-400">{error}</p>}
       <button
         type="submit"
         disabled={status === "sending"}

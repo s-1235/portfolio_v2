@@ -256,6 +256,17 @@ Work top to bottom; each step has its own verification. Mark [x] as steps comple
 - [x] 7.3 Content metrics cross-checked against Toptal record — all match. NDA
       compliance: Podding = marketing site + login + public metrics only ✓
 
+### Ideas adopted from dahbiahmed.com (2026-08-05, Sadam picked 2 of 4)
+- Dark mode: [data-theme="dark"] token overrides in globals.css + @custom-variant
+  dark; components/theme/ThemeToggle.tsx (useSyncExternalStore + MutationObserver,
+  localStorage persistence, no-flash boot script in layout body); HeroGraph nodes/
+  lines are theme-aware via MutationObserver. Mobile header needed shrink + 
+  flex-wrap to avoid overflow (verified 390/360/320).
+- "How I can help" section on home (#services, before contact): 3 cards: AI
+  product builds / LLM evals and benchmarks / Full stack engineering.
+- NOT adopted (offered, declined for now): metric-dense hero bio, bookshelf
+  section (bookshelf needs Sadam's real book list).
+
 ### 3D hero (2026-08-03, Sadam requested after research pass)
 - Research consensus (Awwwards 2025 winners, Utsubo 2026 roundup): one 3D idea,
   hero-only, lazy-loaded, rest of page flat. Chosen option: subtle 3D hero object.

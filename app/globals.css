@@ -11,6 +11,18 @@
   --line: #dcdcdf;
 }
 
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+:root[data-theme="dark"] {
+  --bg: #131316;
+  --surface: #1b1b1f;
+  --ink: #ededf0;
+  --muted: #9b9ba4;
+  --accent: #a05cff;
+  --accent-soft: #241536;
+  --line: #2c2c31;
+}
+
 @theme inline {
   --color-bg: var(--bg);
   --color-surface: var(--surface);

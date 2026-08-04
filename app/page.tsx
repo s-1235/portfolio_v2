@@ -77,6 +77,54 @@ export default function Home() {
           </Container>
         </section>
 
+        <section id="services" className="border-t border-line py-20">
+          <Container>
+            <Reveal>
+              <h2 className="font-display mb-4 text-3xl sm:text-4xl">
+                How I can help
+              </h2>
+              <p className="mb-12 max-w-xl text-muted">
+                The three kinds of work I take on.
+              </p>
+            </Reveal>
+            <div className="grid gap-6 sm:grid-cols-3">
+              <Reveal>
+                <div className="h-full rounded-2xl border border-line bg-surface p-8">
+                  <h3 className="font-display text-xl">AI product builds</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted">
+                    End to end delivery of LLM powered products: agent
+                    pipelines with LangGraph, RAG over your data, and the
+                    product around them in Next.js.
+                  </p>
+                </div>
+              </Reveal>
+              <Reveal delay={0.05}>
+                <div className="h-full rounded-2xl border border-line bg-surface p-8">
+                  <h3 className="font-display text-xl">
+                    LLM evals and benchmarks
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted">
+                    Eval task design, oracles and test harnesses, sandboxed
+                    model runs, and the tooling contributors need to author
+                    benchmarks at scale.
+                  </p>
+                </div>
+              </Reveal>
+              <Reveal delay={0.1}>
+                <div className="h-full rounded-2xl border border-line bg-surface p-8">
+                  <h3 className="font-display text-xl">
+                    Full stack engineering
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted">
+                    Building or rescuing production systems across Next.js,
+                    Django, and Node, from data model to interface.
+                  </p>
+                </div>
+              </Reveal>
+            </div>
+          </Container>
+        </section>
+
         <section id="contact" className="border-t border-line py-20">
           <Container>
             <Reveal>

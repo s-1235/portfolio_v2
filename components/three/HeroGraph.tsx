@@ -156,7 +156,7 @@ function advance(
   }
 }
 
-function Graph({ reduce }: { reduce: boolean }) {
+function Graph({ reduce, dark }: { reduce: boolean; dark: boolean }) {
   const group = useRef<THREE.Group>(null);
   const meshAttr = useRef<THREE.BufferAttribute>(null);
   const iconAttrs = useRef<(THREE.BufferAttribute | null)[]>([
@@ -215,7 +215,7 @@ function Graph({ reduce }: { reduce: boolean }) {
           <bufferAttribute attach="attributes-position" args={[g.base, 3]} />
         </bufferGeometry>
         <pointsMaterial
-          color="#18181b"
+          color={dark ? "#e8e8ec" : "#18181b"}
           size={0.032}
           sizeAttenuation
           depthWrite={false}
@@ -237,7 +237,7 @@ function Graph({ reduce }: { reduce: boolean }) {
           <bufferAttribute attach="attributes-position" args={[g.lines, 3]} />
         </bufferGeometry>
         <lineBasicMaterial
-          color="#bcbcc2"
+          color={dark ? "#55555e" : "#bcbcc2"}
           transparent
           opacity={0.5}
           depthWrite={false}
@@ -287,12 +287,21 @@ function Graph({ reduce }: { reduce: boolean }) {
 
 export default function HeroGraph() {
   const [reduce, setReduce] = useState(false);
+  const [dark, setDark] = useState(false);
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
     const update = () => setReduce(mq.matches);
     update();
     mq.addEventListener("change", update);
     return () => mq.removeEventListener("change", update);
+  }, []);
+  useEffect(() => {
+    const el = document.documentElement;
+    const update = () => setDark(el.dataset.theme === "dark");
+    update();
+    const mo = new MutationObserver(update);
+    mo.observe(el, { attributes: true, attributeFilter: ["data-theme"] });
+    return () => mo.disconnect();
   }, []);
 
   return (
@@ -301,7 +310,7 @@ export default function HeroGraph() {
       camera={{ position: [0, 0, 9], fov: 22 }}
       gl={{ antialias: true, alpha: true }}
     >
-      <Graph reduce={reduce} />
+      <Graph reduce={reduce} dark={dark} />
     </Canvas>
   );
 }
