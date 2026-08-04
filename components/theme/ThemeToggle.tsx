@@ -15,7 +15,7 @@ export default function ThemeToggle() {
   const dark = useSyncExternalStore(
     subscribe,
     () => document.documentElement.dataset.theme === "dark",
-    () => false,
+    () => true,
   );
   const toggle = () => {
     if (dark) {
