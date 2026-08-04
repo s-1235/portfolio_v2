@@ -94,8 +94,8 @@ body {
   font-size: 0.875em;
 }
 .prose pre {
-  background: var(--ink);
-  color: var(--bg);
+  background: #101014;
+  color: #e6e6ea;
   border-radius: 1rem;
   padding: 1.25rem;
   overflow-x: auto;

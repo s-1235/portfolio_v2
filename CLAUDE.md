@@ -279,6 +279,11 @@ Work top to bottom; each step has its own verification. Mark [x] as steps comple
   .link-sweep animated underline on header nav + footer socials, work card
   image border lightens on hover (group-hover:border-muted).
 - NOT adopted: halftone placeholder tiles, keyword marquee (offered).
+- Dark audit fixes (2026-08-05): demo retry/fail states got dark: variants
+  (amber/red-500/15), demo log + .prose pre now FIXED dark terminal colors in
+  both themes (#101014/#e6e6ea, zinc-950/200), favicon recolored ink→accent
+  purple (was invisible on dark browser tabs). Full-page dark sweep clean.
+  NOTE: cartoon avatar clashes most in dark; real photo increasingly needed.
 
 ### 3D hero (2026-08-03, Sadam requested after research pass)
 - Research consensus (Awwwards 2025 winners, Utsubo 2026 roundup): one 3D idea,

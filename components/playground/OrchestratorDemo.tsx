@@ -76,9 +76,9 @@ const freshNodes = (): Record<string, NodeState> =>
 const statusStyle: Record<NodeStatus, string> = {
   idle: "border-line bg-surface text-muted",
   running: "border-accent bg-accent-soft/40 text-ink",
-  retrying: "border-amber-500 bg-amber-50 text-ink",
+  retrying: "border-amber-500 bg-amber-50 text-ink dark:bg-amber-500/15",
   done: "border-ink bg-surface text-ink",
-  failed: "border-red-500 bg-red-50 text-ink",
+  failed: "border-red-500 bg-red-50 text-ink dark:bg-red-500/15",
   skipped: "border-line bg-bg text-muted opacity-60",
 };
 
@@ -416,7 +416,7 @@ export default function OrchestratorDemo() {
 
       <div
         ref={logRef}
-        className="mt-6 h-44 overflow-y-auto rounded-xl bg-ink p-4 font-mono text-xs leading-relaxed text-bg"
+        className="mt-6 h-44 overflow-y-auto rounded-xl bg-zinc-950 p-4 font-mono text-xs leading-relaxed text-zinc-200"
       >
         {log.map((line, i) => (
           <p key={i}>{line}</p>
