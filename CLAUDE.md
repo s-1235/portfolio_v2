@@ -285,6 +285,64 @@ Work top to bottom; each step has its own verification. Mark [x] as steps comple
   purple (was invisible on dark browser tabs). Full-page dark sweep clean.
   NOTE: cartoon avatar clashes most in dark; real photo increasingly needed.
 
+### Portrait head-turn effect (2026-08-07, replicating dahbiahmed.com)
+- Reverse-engineered the reference: it is NOT a CSS tilt, it's a raw <img> src
+  swap between several pre-rendered photos of Ahmed's head at different real
+  angles (center/left/right/bottom/bottom-right webp files), chosen by cursor
+  zone relative to the photo. Confirmed via Playwright probing his live site's
+  actual network requests.
+  Constraint: Sadam only has one frontal photo (no photo shoot planned). AI
+  services (Higgsfield etc., connected to the shared Claude Max account) were
+  explicitly ruled out by Sadam over privacy: generated images would land in
+  that connector's account-level media library, visible to other teammates on
+  the same Claude account, even though the session transcript itself never
+  leaves this machine. So the whole pipeline had to run locally, offline, with
+  nothing leaving this machine except a one-time generic model-weights download
+  (Google's public MediaPipe face-landmarker file, not personal data).
+- Built a local, fully offline pose-synthesis pipeline instead (scratchpad
+  venv: mediapipe + opencv-python-headless + scipy + pillow):
+  1. MediaPipe FaceLandmarker (478 pts incl. iris) on content-assets/brand/
+     profile-original.png.
+  2. Tried global thin-plate-spline warp first — badly smeared/pointed the
+     ears (no landmark data exists for ears at all, so any technique that
+     tries to move that region is guessing blind). Rebuilt as a Delaunay
+     piecewise-affine triangulated warp instead (the standard face-morph
+     technique), with the ENTIRE face silhouette (hairline/jaw/temple, i.e.
+     the FACE_OVAL landmark ring) pinned at zero displacement — ears/hair
+     never move, only interior features do. That fully eliminated the
+     artifacts.
+  3. Interior landmarks (eyes, brows, nose, lips, inner cheek) get a real
+     yaw/pitch 3D rotation reprojection (using MediaPipe's per-point z depth)
+     for a subtle feature shift.
+  4. The dominant, legible cue turned out to be the IRIS, not the head
+     silhouette: mesh-warping a ~5px iris diluted its motion across
+     neighboring eyelid triangles into an almost invisible ~2px shift.
+     Switched to directly compositing the pupil as a small soft-edged circular
+     patch (cropped from its original position, pasted at a proportional
+     offset within the sclera, ~30% of eye-width/height) — this is what
+     actually reads as "looking toward the cursor". Verified quantitatively
+     (pixel-centroid measurement) before trusting it visually.
+  5. Directional shading gradient (subtle, ≤16%) darkens the side the face
+     turns away from.
+  Six poses generated: center (reused existing public/profile.png, untouched)
+  · left · right · down · down-left · down-right. Cropped/resized to the same
+  640x640 face-centered frame as profile.png, saved to public/profile-<pose>.png.
+- components/about/PortraitTilt.tsx rewritten: preloads all 6 pose images via
+  `new window.Image()` on mount (Promise.all, tracks `ready`), then swaps a
+  plain <img> (eslint-disabled next/no-img-element — deliberate: next/image
+  re-fetches an optimized URL per src change and would flash a loading state
+  on every pose swap, defeating the instant-swap effect) based on cursor
+  position relative to the frame, in six zones matching the reference's
+  behavior (dx/dy thresholds ±0.25/0.30 of a 420px scale). Old CSS
+  rotateY/rotateX tilt + pan-inside-mask approach removed entirely — the pose
+  photos now carry 100% of the effect, matching the reference mechanism
+  exactly rather than approximating it.
+  Verified with Playwright on the actual /about page (dark theme): correct
+  src swap at all 6 zones, screenshotted circular-frame result at two cursor
+  positions, visually confirmed correct gaze direction and no artifacts.
+  Scratchpad venv (rembg-venv) and generation scripts are session-local, not
+  committed — the technique/decisions are logged here in case of a rebuild.
+
 ### 3D hero (2026-08-03, Sadam requested after research pass)
 - Research consensus (Awwwards 2025 winners, Utsubo 2026 roundup): one 3D idea,
   hero-only, lazy-loaded, rest of page flat. Chosen option: subtle 3D hero object.

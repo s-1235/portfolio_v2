@@ -15,11 +15,4 @@ export const posts: Post[] = [
     summary:
       "What I have learned building benchmark tasks and eval tooling, and how the same craft shows up in the public record from OpenAI, METR, and Epoch AI.",
   },
-  {
-    slug: "rebuilding-my-portfolio-for-the-ai-era",
-    title: "Rebuilding my portfolio for the AI era",
-    date: "2026-07-29",
-    summary:
-      "Why I rebuilt my portfolio from scratch and the two production bugs I hit on the way.",
-  },
 ];
