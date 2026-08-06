@@ -388,7 +388,15 @@ CLI/API directly (auth token in ~/.local/share/com.vercel.cli/auth.json).
 - [x] Socials final: GitHub s-1235, LinkedIn sadam-khan-9aba2b213 (confirmed by
       Sadam), X @SadamKh88866704 (added 2026-08-01), Toptal badge.
 - [ ] Enable Analytics in Vercel dashboard
-- [ ] Real photo for /about (cartoon avatar currently); resume PDF for download
+- [x] Real photo DONE (2026-08-06): Sadam supplied public/profile.png (original
+      1024x1536 backed up at content-assets/brand/profile-original.png, optimized
+      720x1080/295KB). About page now uses components/about/PortraitTilt.tsx
+      (cursor-tilt portrait, reduced-motion static). Cartoon avatar retired.
+- [x] LinkedIn banner created (2026-08-06): public/linkedin-banner.png, 1584x396
+      (LinkedIn cover spec), site design language (dark, node motif, mono eyebrow,
+      Fraunces headline, URL pill sadamkhan.vercel.app). Content placed clear of
+      the profile-circle overlap zone. Template: scratchpad banner.html.
+- [ ] Resume PDF for download (still pending)
 - [ ] Sadam to review /work/vetto claims + the writing post (published in his name)
 - [ ] Optional: custom domain; submit sitemap in Search Console; delete duplicate
       portfolio-v2 Vercel project (sadamkhan project is canonical now)

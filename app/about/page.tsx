@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import SiteHeader from "@/components/layout/SiteHeader";
+import PortraitTilt from "@/components/about/PortraitTilt";
 import SiteFooter from "@/components/layout/SiteFooter";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
@@ -21,13 +21,7 @@ export default function AboutPage() {
         <Container className="pt-12 pb-20">
           <div className="flex flex-col gap-10 sm:flex-row sm:items-start">
             <Reveal>
-              <Image
-                src="/brand/sadamAva.png"
-                alt="Sadam Khan"
-                width={160}
-                height={160}
-                className="rounded-2xl"
-              />
+              <PortraitTilt />
             </Reveal>
             <Reveal delay={0.05} className="max-w-2xl">
               <p className="mb-4 with-dot font-mono text-xs font-medium tracking-widest uppercase text-accent">
